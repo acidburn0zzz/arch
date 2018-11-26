@@ -5,3 +5,5 @@ My installation-scripts for *Arch Linux + Xfce + LUKS + systemd-boot*. Currently
 - **DE:** Xfce
 - **Encryption:** LUKS disk-encryption (except boot partition) via dm-encrypt/cryptsetup.
 - **Decryption:** Keyfile on an USB-stick. No manual typing of the password required.
+
+![alt text](https://github.com/astier/arch-installer/blob/master/Screenshot_2018-11-26_02-08-20.png)
