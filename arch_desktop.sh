@@ -3,11 +3,11 @@
 # Mirrorlist
 sudo systemctl start dhcpcd
 sudo pacman -S reflector
-sudo reflector -c Germany -p https -l10 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --info -p https -l256 -f32 --score 8 rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme file-roller firefox gedit git gvfs htop network-manager-applet noto-fonts pavucontrol pulseaudio pycharm-community-edition slock ttf-dejavu thunar-archive-plugin ufw xautolock xfce4 xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-whiskermenu-plugin xorg-server # nvidia
-sudo pacman -Rs xfwm4-themes
+sudo pacman -S arc-gtk-theme exo firefox garcon git gtk-xfce-engine htop network-manager-applet noto-fonts pavucontrol pulseaudio pycharm-community-edition ranger slock ttf-dejavu tumbler ufw xautolock xfce4-panel xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-session xfce4-settings xfce4-terminal xfce4-whiskermenu-plugin xfconf xfdesktop xfwm4 xorg-server # nvidia
+sudo pacman -Rns netctl vi
 sudo systemctl stop dhcpcd
 sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
 
@@ -39,4 +39,3 @@ reboot
 # systemctl --all --failed
 # journalctl -p3 -xb / -xe
 # sudo pacman -Rns$(pacman -Qtdg)
-
