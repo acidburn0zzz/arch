@@ -74,7 +74,7 @@ mkinitcpio -p linux
 
 # User
 EDITOR=nano visudo
-useradd -m -G wheel aleks
+useradd -mG wheel aleks
 passwd aleks
 passwd
 passwd -l root
