@@ -28,10 +28,9 @@ rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda3.bak
 . .bashrc && conda update --all
 
 # Configuration
+mkdir .config Projects && cd Projects
 git clone https://github.com/astier/dotfiles.git
-mkdir .config
-cd dotfiles
-bash install.sh
+cd dotfiles && bash install.sh
 
 reboot
 
