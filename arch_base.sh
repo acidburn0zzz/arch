@@ -6,17 +6,17 @@ timedatectl set-ntp 1
 # Partition
 # TODO reset & wipe SSD
 gdisk /dev/nvme0n1  # TODO optimize
-# boot +256M ef00
+# boot +128M ef00
 # root
 
 # Encrypt
 mkdir key
 mount -L USB key
-cryptsetup luksFormat /dev/nvme0n1p2 -d key/.log
-cryptsetup open /dev/nvme0n1p2 root -d key/.log
+cryptsetup luksFormat /dev/sda2 -d key/.log
+cryptsetup open /dev/sda2 root -d key/.log
 
 # Filesystems
-mkfs.fat -F32 -n EFI /dev/nvme0n1p1
+mkfs.fat -F16 -n EFI /dev/sda1
 mkfs.ext4 -L ROOT /dev/mapper/root
 
 # Mount
@@ -27,7 +27,7 @@ mount -L EFI /mnt/boot
 # Install
 nano /etc/pacman.d/mirrorlist
 # Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode
+pacstrap /mnt base bash-completion intel-ucode
 genfstab -L /mnt >> /mnt/etc/fstab  # TODO optimize
 arch-chroot /mnt
 
@@ -60,7 +60,7 @@ nano /boot/loader/entries/arch.conf
 # linux     /vmlinuz-linux
 # initrd    /intel-ucode.img
 # initrd    /initramfs-linux.img
-# options   cryptdevice=/dev/nvme0n1p2:root
+# options   cryptdevice=/dev/sda2:root
 # options   cryptkey=LABEL=USB:vfat:.log
 # options   root=LABEL=ROOT rw
 # options   loglevel=3
