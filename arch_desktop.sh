@@ -33,9 +33,9 @@ cd dotfiles && sh install.sh
 reboot
 
 # Maintenance
-# TODO silent boot
 # TODO health-check-script
 # kernel, systemd, journal, xorg
 # systemctl --all --failed
 # journalctl -p3 -xb / -xe
 # sudo pacman -Rns$(pacman -Qtdg)
+# TODO silent boot

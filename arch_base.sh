@@ -15,8 +15,8 @@ mount -L USB key
 cryptsetup luksFormat /dev/sda2 -d key/.log
 cryptsetup open /dev/sda2 root -d key/.log
 
-# Filesystems
-mkfs.fat -F16 -n EFI /dev/sda1
+# Filesystems TODO optimize
+mkfs.vfat -F16 -n EFI /dev/sda1
 mkfs.ext4 -L ROOT /dev/mapper/root
 
 # Mount
@@ -49,7 +49,7 @@ nano /etc/locale.gen
 # Uncomment: en_US.UTF-8 UTF-8
 locale-gen
 
-# Bootloader
+# Bootloader TODO efistub
 bootctl install
 nano /boot/loader/loader.conf
 # default   arch
