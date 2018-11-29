@@ -16,18 +16,18 @@ cryptsetup luksFormat /dev/sda2 -d key/.log
 cryptsetup open /dev/sda2 root -d key/.log
 
 # Filesystems TODO optimize
-mkfs.vfat -F16 -n EFI /dev/sda1
+mkfs.vfat -F16 -n BOOT /dev/sda1
 mkfs.ext4 -L ROOT /dev/mapper/root
 
 # Mount
 mount -L ROOT /mnt
 mkdir /mnt/boot
-mount -L EFI /mnt/boot
+mount -L BOOT /mnt/boot
 
 # Install
 nano /etc/pacman.d/mirrorlist
 # Move server of choice to the top
-pacstrap /mnt base bash-completion intel-ucode
+pacstrap /mnt base base-devel bash-completion intel-ucode
 genfstab -L /mnt >> /mnt/etc/fstab  # TODO optimize
 arch-chroot /mnt
 
@@ -56,7 +56,7 @@ nano /boot/loader/loader.conf
 # timeout   0
 # editor    0
 nano /boot/loader/entries/arch.conf
-# title     Arch Linux Edge
+# title     Arch Linux
 # linux     /vmlinuz-linux
 # initrd    /intel-ucode.img
 # initrd    /initramfs-linux.img

@@ -3,13 +3,13 @@
 # Mirrorlist
 sudo systemctl start dhcpcd
 sudo pacman -S reflector
-sudo reflector --info -p https -l256 --score 32 -f8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector -p https -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme base-devel file-roller firefox gedit git gvfs network-manager-applet noto-fonts pavucontrol pulseaudio slock ttf-dejavu thunar-archive-plugin ufw xautolock xfce4 xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-whiskermenu-plugin xorg-server # eog evince htop nvidia nvidia-settings pycharm-community-edition
-sudo pacman -Rns netctl vi xfwm4-themes
+sudo pacman -S arc-gtk-theme cinnamon firefox git gnome-terminal ufw xorg-server xorg-xinit # eog evince htop nvidia pycharm-community-edition
+sudo pacman -Rns netctl vi
 sudo systemctl stop dhcpcd
-sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
+sudo systemctl enable --now NetworkManager systemd-timesyncd.service ufw.service
 
 # AUR
 # TODO write custom scripts
