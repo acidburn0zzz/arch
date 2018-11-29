@@ -5,7 +5,7 @@ timedatectl set-ntp 1
 
 # Partition
 # TODO reset & wipe SSD
-gdisk /dev/nvme0n1  # TODO optimize
+gdisk /dev/sda  # TODO optimize
 # boot +128M ef00
 # root
 

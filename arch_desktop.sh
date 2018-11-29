@@ -31,7 +31,6 @@ git clone https://github.com/astier/arch-installer.git
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
 
-
 reboot
 
 # Maintenance
