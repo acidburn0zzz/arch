@@ -27,8 +27,10 @@ rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda3.bak
 
 # Configuration
 mkdir .config Projects && cd Projects
+git clone https://github.com/astier/arch-installer.git
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
+
 
 reboot
 
