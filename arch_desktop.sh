@@ -6,7 +6,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme cinnamon firefox git gnome-terminal ufw xorg-server xorg-xinit # eog evince htop nvidia pycharm-community-edition
+sudo pacman -S arc-gtk-theme cinnamon firefox git gnome-terminal nemo-fileroller ufw xorg-server xorg-xinit # eog evince htop nvidia pycharm-community-edition
 sudo pacman -Rns netctl vi
 sudo systemctl stop dhcpcd
 sudo systemctl enable --now NetworkManager systemd-timesyncd.service ufw.service
