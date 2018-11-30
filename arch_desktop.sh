@@ -18,7 +18,6 @@ cd dropbox && makepkg -Ccirs
 
 # Dotfiles
 cd && mkdir .config Projects && cd Projects
-git clone https://github.com/astier/arch-installer.git
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
 
@@ -30,6 +29,7 @@ conda update --all
 
 reboot
 
+# TODO system-update
 # TODO health-check
-# TODO silent-boot
 # TODO system-cleaner
+# TODO silent-boot
