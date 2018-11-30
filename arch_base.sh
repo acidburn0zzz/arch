@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO SCRIPT
+
 loadkeys de
 timedatectl set-ntp 1
 
