@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# TODO SCRIPT
-
 loadkeys de
 timedatectl set-ntp 1
 
 # Partition
-# TODO reset & wipe SSD
-gdisk /dev/sda  # TODO optimize
-# boot +128M ef00
-# root
+gdisk /dev/sda
+# boot +128M ef00, root
 
 # Encrypt
 mkdir key
@@ -17,7 +13,7 @@ mount -L USB key
 cryptsetup luksFormat /dev/sda2 -d key/.log
 cryptsetup open /dev/sda2 root -d key/.log
 
-# Filesystems TODO optimize
+# Filesystems
 mkfs.vfat -F16 -n BOOT /dev/sda1
 mkfs.ext4 -L ROOT /dev/mapper/root
 
@@ -30,7 +26,7 @@ mount -L BOOT /mnt/boot
 nano /etc/pacman.d/mirrorlist
 # Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode
-genfstab -L /mnt >> /mnt/etc/fstab  # TODO optimize
+genfstab -L /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
 # Time
@@ -51,7 +47,7 @@ nano /etc/locale.gen
 # Uncomment: en_US.UTF-8 UTF-8
 locale-gen
 
-# Bootloader TODO efistub
+# Bootloader
 bootctl install
 nano /boot/loader/loader.conf
 # default   arch

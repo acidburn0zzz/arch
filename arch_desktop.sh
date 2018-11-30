@@ -3,18 +3,16 @@
 # Mirrorlist
 sudo systemctl start dhcpcd
 sudo pacman -S reflector
-sudo reflector -p https -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme cinnamon firefox git gnome-terminal nemo-fileroller ufw xorg-server xorg-xinit # eog evince htop nvidia pycharm-community-edition
+sudo pacman -S arc-gtk-theme cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx pycharm-community-edition ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager systemd-timesyncd.service ufw.service
 
-# AUR TODO write custom scripts / AUR helper
-mkdir AUR && cd AUR
-git clone https://aur.archlinux.org/flat-remix-git.git
-cd flat-remix-git && makepkg -Ccirs && cd ..
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox && makepkg -Ccirs
+# AUR
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -Ccirs && cd .. && rm -rf yay
+yay -S dropbox flat-remix-git
 
 # Dotfiles
 cd && mkdir .config Projects && cd Projects
@@ -30,6 +28,7 @@ conda update --all
 reboot
 
 # TODO system-update
+# TODO system-clean
 # TODO health-check
-# TODO system-cleaner
 # TODO silent-boot
+# TODO install-script
