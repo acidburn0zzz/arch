@@ -19,12 +19,14 @@ cd && mkdir .config Projects && cd Projects
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
 
+# Scripts
+cd ~/Projects
+git clone https://github.com/astier/scripts.git
+cd scripts && sh install.sh
+
 # Miniconda
 cd && curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh && rm Miniconda3-latest-Linux-x86_64.sh
 conda update --all
 
 reboot
-
-# TODO silent-boot
