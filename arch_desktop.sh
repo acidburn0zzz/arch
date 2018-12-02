@@ -27,8 +27,4 @@ conda update --all
 
 reboot
 
-# TODO system-update
-# TODO system-clean
-# TODO health-check
 # TODO silent-boot
-# TODO install-script
