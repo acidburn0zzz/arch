@@ -15,7 +15,7 @@ cd yay && makepkg -Ccirs && cd .. && rm -rf yay
 yay -S dropbox flat-remix-git
 
 # Dotfiles
-cd && mkdir .config Projects && cd Projects
+cd && mkdir Projects && cd Projects
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
 
@@ -27,6 +27,3 @@ cd scripts && sh install.sh
 # Miniconda
 cd && curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh && rm Miniconda3-latest-Linux-x86_64.sh
-conda update --all
-
-reboot
