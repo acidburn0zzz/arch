@@ -20,8 +20,9 @@ yay -S dropbox flat-remix-git
 #VSC
 sudo pacman -S ctags npm
 sudo npm --unsafe-perm i -g bash-language-server
-yay -S dropbox flat-remix-git visual-studio-code-bin
+yay -S visual-studio-code-bin
 code --install-extension davidanson.vscode-markdownlint
+code --install-extension dunstontc.viml
 code --install-extension equinusocio.vsc-material-theme
 code --install-extension formulahendry.code-runner
 code --install-extension mads-hartmann.bash-ide-vscode

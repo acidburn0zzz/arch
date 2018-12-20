@@ -71,7 +71,7 @@ nano /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # User
-EDITOR=nano visudo
+visudo  # Uncomment WHEEL
 useradd -mG wheel aleks
 passwd aleks
 passwd
