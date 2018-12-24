@@ -23,7 +23,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Install
-nano /etc/pacman.d/mirrorlist
+vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode
 genfstab -L /mnt >> /mnt/etc/fstab
@@ -35,7 +35,7 @@ hwclock -w
 
 # Host
 echo hostname > /etc/hostname
-nano /etc/hosts
+vi /etc/hosts
 # 127.0.0.1     localhost
 # ::1           localhost
 # 127.0.1.1     hostname.localdomain    hostname
@@ -43,17 +43,17 @@ nano /etc/hosts
 # Language
 echo KEYMAP=de-latin1 > /etc/vconsole.conf
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-nano /etc/locale.gen
+vi /etc/locale.gen
 # Uncomment: en_US.UTF-8 UTF-8
 locale-gen
 
 # Bootloader
 bootctl install
-nano /boot/loader/loader.conf
+vi /boot/loader/loader.conf
 # default   arch
 # timeout   0
 # editor    0
-nano /boot/loader/entries/arch.conf
+vi /boot/loader/entries/arch.conf
 # title     Arch Linux
 # linux     /vmlinuz-linux
 # initrd    /intel-ucode.img
@@ -65,7 +65,7 @@ nano /boot/loader/entries/arch.conf
 # TODO timeout
 
 # Initramfs
-nano /etc/mkinitcpio.conf
+vi /etc/mkinitcpio.conf
 # MODULES=(vfat)
 # HOOKS=(base udev autodetect modconf block keyboard encrypt filesystems fsck)
 mkinitcpio -p linux
