@@ -24,8 +24,7 @@ rm -rf yay
 yay -S dropbox flat-remix-git
 
 # VSC
-sudo pacman -S ctags npm pandoc texlive-core xdg-utils
-sudo npm --unsafe-perm i -g bash-language-server
+sudo pacman -S bash-language-server ctags pandoc texlive-core xdg-utils
 yay -S visual-studio-code-bin
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
