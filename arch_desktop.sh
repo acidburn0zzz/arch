@@ -1,5 +1,6 @@
 #!/bin/bash
- 
+
+localectl --no-convert set-x11-keymap de pc105
 vi /etc/systemd/system/getty@tty1.service.d/override.conf
 # [Service]
 # ExecStart=
