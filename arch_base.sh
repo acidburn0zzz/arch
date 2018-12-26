@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 loadkeys de
 timedatectl set-ntp 1

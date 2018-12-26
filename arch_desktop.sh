@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 localectl --no-convert set-x11-keymap de pc105
 vi /etc/systemd/system/getty@tty1.service.d/override.conf
@@ -37,6 +37,7 @@ code --install-extension mads-hartmann.bash-ide-vscode
 code --install-extension ms-python.python
 code --install-extension pkief.material-icon-theme
 code --install-extension rogalmic.bash-debug
+code --install-extension rpinski.shebang-snippets
 code --install-extension shakram02.bash-beautify
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension visualstudioexptteam.vscodeintellicode
