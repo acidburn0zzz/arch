@@ -18,10 +18,7 @@ sudo pacman -Rns nano netctl vi
 
 # AUR
 git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -Ccirs
-cd ..
-rm -rf yay
+cd yay && makepkg -Ccirs && cd .. && rm -rf yay
 yay -S dropbox flat-remix-git
 
 # VSC
@@ -52,8 +49,6 @@ conda create -n isy autopep8 keras matplotlib pandas pylint rope scikit-learn
 conda clean -ay
 
 # Dotfiles
-mkdir ~/Projects
-cd ~/Projects
+mkdir ~/Projects && cd ~/Projects
 git clone https://github.com/astier/dotfiles.git
-cd dotfiles
-sh install.sh
+cd dotfiles && sh install.sh
