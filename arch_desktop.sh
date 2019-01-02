@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme cinnamon feh firefox git gnome-screenshot htop nemo-fileroller neofetch neovim numlockx pandoc powerline powerline-fonts termite texlive-core ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme cinnamon feh firefox git gnome-screenshot htop nemo-fileroller neofetch neovim numlockx pandoc powerline powerline-fonts termite texlive-core ttf-baekmuk ttd-dejavu ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 sudo pacman -Rns nano netctl vi
 
