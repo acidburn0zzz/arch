@@ -15,7 +15,6 @@ sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mir
 sudo pacman -S arc-gtk-theme cinnamon feh firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neofetch numlockx ttf-baekmuk ttd-dejavu ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 
-# Neovim
 sudo pacman -S neovim pandoc powerline powerline-fonts texlive-core
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo pacman -Rns nano vi
