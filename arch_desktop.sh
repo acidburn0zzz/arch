@@ -46,6 +46,7 @@ code --install-extension shakram02.bash-beautify
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension timonwong.shellcheck
 code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension vscodevim.vim
 code --install-extension yzhang.markdown-all-in-one
 
 # Neovim
