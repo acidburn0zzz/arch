@@ -14,17 +14,12 @@ sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mir
 # Packages
 sudo pacman -S arc-gtk-theme biber cinnamon eog firefox git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
-
-# Neovim
-sudo pacman -S neovim powerline powerline-fonts
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo pacman -Rns nano vi
+sudo pacman -Rns netctl nano
 
 # AUR
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -Ccirs && cd .. && rm -rf yay
-yay -S dropbox flat-remix-git texlive-localmanager-git
-tllocalmgr install csquotes
+yay -S dropbox flat-remix-git
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
