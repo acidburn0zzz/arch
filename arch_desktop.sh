@@ -26,8 +26,25 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh
 conda update --all
-conda create -n isy keras matplotlib scikit-learn
+conda create -n isy autopep8 keras matplotlib pandas pylint rope scikit-learn
 conda clean -ay
+
+sudo pacman -S bash-language-server ctags xdg-utils
+yay -S visual-studio-code-bin
+code --install-extension davidanson.vscode-markdownlint
+code --install-extension dougfinke.vscode-pandoc
+code --install-extension equinusocio.vsc-material-theme
+code --install-extension formulahendry.code-runner
+code --install-extension james-yu.latex-workshop
+code --install-extension mads-hartmann.bash-ide-vscode
+code --install-extension ms-python.python
+code --install-extension pkief.material-icon-theme
+code --install-extension rogalmic.bash-debug
+code --install-extension rpinski.shebang-snippets
+code --install-extension shakram02.bash-beautify
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension yzhang.markdown-all-in-one
 
 # Dotfiles
 mkdir ~/Projects && cd ~/Projects
