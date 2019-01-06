@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog firefox git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog firefox gedit git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 sudo pacman -Rns netctl nano
 
@@ -29,7 +29,7 @@ conda update --all
 conda create -n isy autopep8 keras matplotlib pandas pylint rope scikit-learn
 conda clean -ay
 
-sudo pacman -S bash-language-server ctags xdg-utils
+sudo pacman -S bash-language-server ctags shellcheck xdg-utils
 yay -S visual-studio-code-bin
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
@@ -43,6 +43,7 @@ code --install-extension rogalmic.bash-debug
 code --install-extension rpinski.shebang-snippets
 code --install-extension shakram02.bash-beautify
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension timonwong.shellcheck
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension yzhang.markdown-all-in-one
 
