@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog firefox git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog firefox git gnome-screenshot gnome-terminal htop nemo-fileroller noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 
 # AUR
@@ -40,6 +40,7 @@ code --install-extension james-yu.latex-workshop
 code --install-extension mads-hartmann.bash-ide-vscode
 code --install-extension ms-python.python
 code --install-extension pkief.material-icon-theme
+code --install-extension pnp.polacode
 code --install-extension rogalmic.bash-debug
 code --install-extension rpinski.shebang-snippets
 code --install-extension shakram02.bash-beautify
