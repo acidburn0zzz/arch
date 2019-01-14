@@ -34,7 +34,6 @@ yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
-code --install-extension dunstontc.viml
 code --install-extension equinusocio.vsc-material-theme
 code --install-extension formulahendry.code-runner
 code --install-extension james-yu.latex-workshop
