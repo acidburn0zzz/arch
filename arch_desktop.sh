@@ -32,6 +32,7 @@ conda create -n isy keras matplotlib pandas scikit-learn
 # VSCode
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
+conda install autopep8 pylint rope
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
 code --install-extension equinusocio.vsc-material-theme
