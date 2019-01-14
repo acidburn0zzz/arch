@@ -53,6 +53,6 @@ code --install-extension vscodevim.vim
 code --install-extension yzhang.markdown-all-in-one
 
 # Dotfiles
-mkdir ~/Projects && cd ~/Projects
+mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
