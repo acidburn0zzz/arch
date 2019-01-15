@@ -32,6 +32,7 @@ conda create -n isy keras matplotlib pandas scikit-learn
 # VSCode
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
+conda activate isy
 conda install autopep8 pylint rope
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension davidanson.vscode-markdownlint
@@ -56,3 +57,5 @@ code --install-extension yzhang.markdown-all-in-one
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/dotfiles.git
 cd dotfiles && sh install.sh
+
+reboot
