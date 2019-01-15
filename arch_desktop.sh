@@ -33,14 +33,16 @@ conda create -n isy keras matplotlib pandas scikit-learn
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
 conda activate isy
-conda install autopep8 flake8 pylint rope
+conda install autopep8 pylint
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
 code --install-extension equinusocio.vsc-material-theme
 code --install-extension formulahendry.code-runner
+code --install-extension grapecity.gc-excelviewer
 code --install-extension james-yu.latex-workshop
 code --install-extension mads-hartmann.bash-ide-vscode
+code --install-extension mechatroner.rainbow-csv
 code --install-extension ms-python.python
 code --install-extension pkief.material-icon-theme
 code --install-extension pnp.polacode
