@@ -37,7 +37,7 @@ sudo pacman -Rns nano vi
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
 conda activate isy
-conda install autopep8 pylint
+conda install pylint yapf
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
