@@ -30,7 +30,9 @@ conda create -n isy keras matplotlib pandas scikit-learn
 
 # Neovim
 sudo pacman -S neovim powerline-fonts
+pip install pynvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim -c PlugInstall  # Exit nvim after PlugInstall finished
 sudo pacman -Rns nano vi
 
 # VSCode
@@ -39,6 +41,7 @@ sudo pacman -S bash-language-server ctags shellcheck xdg-utils
 conda activate isy
 conda install pylint yapf
 code --install-extension arcticicestudio.nord-visual-studio-code
+code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dougfinke.vscode-pandoc
 code --install-extension dunstontc.viml
