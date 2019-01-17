@@ -11,7 +11,7 @@ vi /etc/systemd/system/getty@tty1.service.d/override.conf
 # Mirrorlist
 sudo systemctl start dhcpcd
 sudo pacman -S reflector
-sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
 sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
@@ -39,6 +39,7 @@ sudo pacman -Rns nano vi
 # VSCode
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
+conda activate isy
 conda install autopep8 pylint
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension coenraads.bracket-pair-colorizer
