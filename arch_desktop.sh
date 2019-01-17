@@ -14,7 +14,7 @@ sudo pacman -S reflector
 sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neofetch noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 
 # AUR
@@ -26,14 +26,12 @@ yay -S dropbox flat-remix-git
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh
+conda update --all
 conda create -n isy keras matplotlib pandas scikit-learn
+conda clean -ay
 
 # Neovim
-sudo pacman -S neovim powerline powerline-fonts shellcheck
-conda activate isy
-pip install pynvim
-conda install -c conda-forge python-language-server
-conda install autopep8 pylint
+sudo pacman -S neovim powerline-fonts
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall  # Exit nvim after PlugInstall finished
 sudo pacman -Rns nano vi
