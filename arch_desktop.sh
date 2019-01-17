@@ -14,7 +14,7 @@ sudo pacman -S reflector
 sudo reflector -p https -l64 -f16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neofetch noto-fonts-emoji numlockx pandoc texlive-bibtexextra texlive-core ttd-dejavu ttf-baekmuk ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 
 # AUR
@@ -29,8 +29,11 @@ rm Miniconda3-latest-Linux-x86_64.sh
 conda create -n isy keras matplotlib pandas scikit-learn
 
 # Neovim
-sudo pacman -S neovim powerline-fonts
+sudo pacman -S neovim powerline powerline-fonts shellcheck
+conda activate isy
 pip install pynvim
+conda install -c conda-forge python-language-server
+conda install pylint
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall  # Exit nvim after PlugInstall finished
 sudo pacman -Rns nano vi
@@ -38,7 +41,6 @@ sudo pacman -Rns nano vi
 # VSCode
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
-conda activate isy
 conda install pylint yapf
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension coenraads.bracket-pair-colorizer
