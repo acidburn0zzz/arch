@@ -33,7 +33,7 @@ sudo pacman -S neovim powerline powerline-fonts shellcheck
 conda activate isy
 pip install pynvim
 conda install -c conda-forge python-language-server
-conda install pylint
+conda install autopep8 pylint
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall  # Exit nvim after PlugInstall finished
 sudo pacman -Rns nano vi
@@ -41,7 +41,7 @@ sudo pacman -Rns nano vi
 # VSCode
 yay -S visual-studio-code-bin
 sudo pacman -S bash-language-server ctags shellcheck xdg-utils
-conda install pylint yapf
+conda install autopep8 pylint
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension davidanson.vscode-markdownlint
