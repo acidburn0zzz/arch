@@ -34,7 +34,6 @@ conda clean -ay
 sudo pacman -S neovim
 yay -S nerd-fonts-dejavu-complete
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim -c PlugInstall  # Exit nvim after PlugInstall finished
 sudo pacman -Rns nano vi
 
 # VSCode
