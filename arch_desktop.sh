@@ -44,6 +44,7 @@ conda install autopep8 pylint
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension davidanson.vscode-markdownlint
+code --install-extension donjayamanne.githistory
 code --install-extension dougfinke.vscode-pandoc
 code --install-extension dunstontc.viml
 code --install-extension equinusocio.vsc-material-theme
@@ -53,6 +54,7 @@ code --install-extension james-yu.latex-workshop
 code --install-extension mads-hartmann.bash-ide-vscode
 code --install-extension mechatroner.rainbow-csv
 code --install-extension ms-python.python
+code --install-extension njpwerner.autodocstring
 code --install-extension pkief.material-icon-theme
 code --install-extension pnp.polacode
 code --install-extension rogalmic.bash-debug
