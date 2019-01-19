@@ -27,7 +27,7 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh
 conda update --all
-conda create -n isy keras matplotlib pandas scikit-learn
+conda create -n isy jupyter keras matplotlib pandas scikit-learn
 conda clean -ay
 
 # Neovim
