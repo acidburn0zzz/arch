@@ -68,7 +68,7 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # User
-visudo  # Uncomment WHEEL
+EDITOR=vi visudo  # Uncomment WHEEL
 useradd -mG wheel aleks
 passwd aleks
 passwd
