@@ -5,7 +5,7 @@ timedatectl set-ntp 1
 
 # Partition
 gdisk /dev/sda
-# boot +128M ef00, root
+# boot +256M EF00, root
 
 # Encrypt
 mkdir key
@@ -23,9 +23,8 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Install
-vi /etc/pacman.d/mirrorlist
-# Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode
+vi /etc/pacman.d/mirrorlist  # Move server of choice to the top
+pacstrap /mnt base bash-completion intel-ucode
 genfstab -L /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
@@ -43,8 +42,7 @@ vi /etc/hosts
 # Language
 echo KEYMAP=de-latin1 > /etc/vconsole.conf
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-vi /etc/locale.gen
-# Uncomment: en_US.UTF-8 UTF-8
+vi /etc/locale.gen  # Uncomment: en_US.UTF-8 UTF-8
 locale-gen
 
 # Bootloader
@@ -62,7 +60,6 @@ vi /boot/loader/entries/arch.conf
 # options   cryptkey=LABEL=USB:vfat:.log
 # options   root=LABEL=ROOT rw
 # options   loglevel=3
-# TODO timeout
 
 # Initramfs
 vi /etc/mkinitcpio.conf
