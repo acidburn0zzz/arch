@@ -31,40 +31,13 @@ conda create -n isy jupyter keras matplotlib pandas scikit-learn
 conda clean -ay
 
 # Neovim
-sudo pacman -S neovim
+sudo pacman -S neovim shellcheck
 yay -S nerd-fonts-dejavu-complete
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo pacman -Rns nano vi
-
-# VSCode
-yay -S visual-studio-code-bin
-sudo pacman -S bash-language-server ctags shellcheck xdg-utils
+pip install pynvim
 conda activate isy
 conda install autopep8 pylint
-code --install-extension arcticicestudio.nord-visual-studio-code
-code --install-extension coenraads.bracket-pair-colorizer
-code --install-extension davidanson.vscode-markdownlint
-code --install-extension donjayamanne.githistory
-code --install-extension dougfinke.vscode-pandoc
-code --install-extension dunstontc.viml
-code --install-extension equinusocio.vsc-material-theme
-code --install-extension formulahendry.code-runner
-code --install-extension grapecity.gc-excelviewer
-code --install-extension james-yu.latex-workshop
-code --install-extension mads-hartmann.bash-ide-vscode
-code --install-extension mechatroner.rainbow-csv
-code --install-extension ms-python.python
-code --install-extension njpwerner.autodocstring
-code --install-extension pkief.material-icon-theme
-code --install-extension pnp.polacode
-code --install-extension rogalmic.bash-debug
-code --install-extension rpinski.shebang-snippets
-code --install-extension shakram02.bash-beautify
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension timonwong.shellcheck
-code --install-extension visualstudioexptteam.vscodeintellicode
-code --install-extension vscodevim.vim
-code --install-extension yzhang.markdown-all-in-one
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo pacman -Rns nano vi
 
 # Dotfiles
 mkdir ~/Projects && cd ~/Projects || exit
