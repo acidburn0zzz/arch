@@ -32,7 +32,9 @@ pip install pynvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo pacman -Rns nano vi
 
-# Dotfiles
-mkdir ~/Projects && cd ~/Projects || exit
+# Projects
+mkdir ~/Projects && cd ~/Projects
+git clone https://github.com/astier/arch-installer
+git clone https://github.com/astier/scripts
 git clone https://github.com/astier/dotfiles
 cd dotfiles && sh install.sh
