@@ -28,15 +28,16 @@ rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda3.bak
 . .bashrc && conda update --all
 conda create -n isy jupyter keras matplotlib pandas scikit-learn
 
-# Neovim
-pacman -S neovim
-yay -S nerd-fonts-dejavu-complete
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo pacman -Rns vi
-
 # Projects
 mkdir ~/Projects && cd ~/Projects
 git clone https://github.com/astier/arch-installer
 git clone https://github.com/astier/scripts
 git clone https://github.com/astier/dotfiles
 cd dotfiles && sh install.sh
+
+# Neovim
+pacman -S neovim
+yay -S nerd-fonts-dejavu-complete
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim -c PlugInstall
+sudo pacman -Rns vi
