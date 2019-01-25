@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neofetch numlockx ttf-baekmuk ttf-dejavu ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller numlockx texlive-bibtexextra texlive-core ttf-baekmuk ttf-dejavu ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 pacman -Rns nano netctl
 
@@ -36,12 +36,8 @@ git clone https://github.com/astier/dotfiles
 cd dotfiles && sh install.sh
 
 # Neovim
-pacman -S biber ctags neovim powerline shellcheck texlive-bibtexextra texlive-core
-pip install pynvim
+pacman -S neovim
 yay -S nerd-fonts-dejavu-complete
-conda activate isy
-conda install isort jedi pylint
-conda install -c conda-forge black pudb python-language-server
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall
 sudo pacman -Rns vi
