@@ -38,6 +38,12 @@ cd dotfiles && sh install.sh
 # Neovim
 pacman -S neovim
 yay -S nerd-fonts-dejavu-complete
+conda create -n nvi python
+conda activate nvi
+pip install black pynvim
+conda activate isy
+conda install isort jedi pylint rope
+pip install pudb python-language-server
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall
 sudo pacman -Rns vi
