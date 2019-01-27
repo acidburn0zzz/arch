@@ -33,7 +33,7 @@ yay -S ttf-twemoji-color visual-studio-code-bin
 sudo pacman -S ctags xdg-utils
 conda activate isy
 conda install pylint rope
-pip install black
+conda install -c conda-forge black
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
