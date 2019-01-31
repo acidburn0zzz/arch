@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neovim numlockx pandoc texlive-bibtexextra texlive-core ttf-baekmuk ttf-dejavu ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot gnome-terminal htop nemo-fileroller neovim numlockx pandoc texlive-bibtexextra texlive-core ttf-baekmuk ttf-dejavu ufw xorg-server xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 pacman -Rns nano netctl vi
 
@@ -25,7 +25,7 @@ yay -S dropbox flat-remix-git
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda3.bak
-source .bashrc && conda update --all
+. .bashrc && conda update --all
 conda create -n isy jupyter keras matplotlib pandas scikit-learn
 
 # VSCode
@@ -39,6 +39,7 @@ code --install-extension davidanson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension dunstontc.viml
 code --install-extension equinusocio.vsc-material-theme
+code --install-extension formulahendry.code-runner
 code --install-extension james-yu.latex-workshop
 code --install-extension ms-python.python
 code --install-extension pkief.material-icon-theme
