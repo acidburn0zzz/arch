@@ -53,6 +53,7 @@ code --install-extension yzhang.markdown-all-in-one
 # Projects
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/arch-installer
-git clone https://github.com/astier/scripts
 git clone https://github.com/astier/dotfiles
+git clone https://github.com/astier/scripts
+git clone https://github.com/astier/templates
 cd dotfiles && sh install.sh
