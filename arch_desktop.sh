@@ -34,11 +34,10 @@ sudo pacman -S ctags shellcheck xdg-utils
 conda activate isy
 conda install pylint rope
 conda install -c conda-forge black
-code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension davidanson.vscode-markdownlint
+code --install-extension daylerees.rainglow
 code --install-extension donjayamanne.githistory
 code --install-extension dunstontc.viml
-code --install-extension equinusocio.vsc-material-theme
 code --install-extension formulahendry.code-runner
 code --install-extension james-yu.latex-workshop
 code --install-extension ms-python.python
