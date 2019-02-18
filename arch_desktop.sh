@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Set x- and tty-keymap
+localectl --no-convert set-x11-keymap de pc105
+
 # Autologin
 sudo systemctl edit getty@tty1.service
 # [Service]
