@@ -22,7 +22,7 @@ pacman -Rns nano netctl vi
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs && cd .. && rm -rf yay
-yay -S dropbox flat-remix-git
+yay -S dropbox flat-remix-git xbanish
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
