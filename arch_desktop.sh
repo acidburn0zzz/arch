@@ -34,12 +34,14 @@ conda create -n isy jupyter keras matplotlib pandas scikit-learn
 # Projects
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/arch-installer
+git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 git clone https://github.com/astier/st
 git clone https://github.com/astier/templates
-cd dotfiles && sh install.sh
 cd ../st && sudo make clean install
+cd ../dmenu && sudo make clean install
+cd dotfiles && sh install.sh
 
 # Neovim
 yay -S nerd-fonts-dejavu-complete
