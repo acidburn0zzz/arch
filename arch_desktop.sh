@@ -35,12 +35,14 @@ conda create -n isy jupyter keras matplotlib pandas scikit-learn
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/arch-installer
 git clone https://github.com/astier/dmenu
+git clone https://github.com/astier/dwm
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 git clone https://github.com/astier/st
 git clone https://github.com/astier/templates
 cd ../st && sudo make clean install
 cd ../dmenu && sudo make clean install
+cd ../dwm && sudo make clean install
 cd dotfiles && sh install.sh
 
 # Neovim
