@@ -15,14 +15,14 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber cinnamon eog evince firefox git gnome-screenshot htop libreoffice-fresh nemo-fileroller neovim numlockx shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xinit # nvidia
+sudo pacman -S alsa-utils biber compton evince feh firefox git htop libreoffice-fresh neovim numlockx scrot slock shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 pacman -Rns nano netctl vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs && cd .. && rm -rf yay
-yay -S dropbox flat-remix-git xbanish
+yay -S dropbox nerd-fonts-ubuntu-mono xbanish
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -46,7 +46,6 @@ cd ../dwm && sudo make clean install
 cd dotfiles && sh install.sh
 
 # Neovim
-yay -S nerd-fonts-dejavu-complete
 conda create -n nvi python
 conda activate nvi
 conda install -c conda-forge black pynvim
