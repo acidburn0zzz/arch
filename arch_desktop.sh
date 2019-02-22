@@ -15,14 +15,14 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S alsa-utils biber compton evince feh firefox git htop libreoffice-fresh neovim numlockx scrot slock shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit # nvidia
+sudo pacman -S alsa-utils biber compton evince feh firefox git htop libreoffice-fresh neovim numlockx scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit # nvidia
 sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
 pacman -Rns nano netctl vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs && cd .. && rm -rf yay
-yay -S dropbox nerd-fonts-ubuntu-mono xbanish
+yay -S dropbox i3lock-fuzzy nerd-fonts-ubuntu-mono xbanish
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -38,11 +38,13 @@ git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
+# git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
 git clone https://github.com/astier/templates
-cd ../st && sudo make clean install
 cd ../dmenu && sudo make clean install
 cd ../dwm && sudo make clean install
+# cd ../slock && sudo make clean install
+cd ../st && sudo make clean install
 cd dotfiles && sh install.sh
 
 # Neovim
