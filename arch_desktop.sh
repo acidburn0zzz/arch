@@ -50,9 +50,10 @@ cd ../dwm && sudo make clean install
 cd ../st && sudo make clean install
 
 # Neovim
-conda create -n nvi python
+conda create -n nvi psutil python
 conda activate nvi
 conda install -c conda-forge black pynvim
+pip install neovim-remote
 conda update --all
 conda activate isy
 conda install isort jedi pylint rope
