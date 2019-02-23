@@ -44,10 +44,10 @@ git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 # git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
-cd dmenu && sudo make clean install
-cd ../dwm && sudo make clean install
-# cd ../slock && sudo make clean install
-cd ../st && sudo make clean install
+cd dmenu && sudo make install clean
+cd ../dwm && sudo make install clean
+# cd ../slock && sudo make install clean
+cd ../st && sudo make install clean
 
 # Neovim
 conda create -n nvi psutil python
