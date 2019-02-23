@@ -32,21 +32,22 @@ rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda3.bak
 . .bashrc && conda update --all
 conda create -n isy jupyter keras matplotlib pandas scikit-learn
 
-# Projects
+# Dotfiles
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/arch-installer
+git clone https://github.com/astier/dotfiles
+cd dotfiles && sh install.sh
+
+# Suckless
+cd ~/Projects
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
-git clone https://github.com/astier/dotfiles
-git clone https://github.com/astier/scripts
 # git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
-git clone https://github.com/astier/templates
-cd ../dmenu && sudo make clean install
+cd dmenu && sudo make clean install
 cd ../dwm && sudo make clean install
 # cd ../slock && sudo make clean install
 cd ../st && sudo make clean install
-cd dotfiles && sh install.sh
 
 # Neovim
 conda create -n nvi python
