@@ -35,8 +35,10 @@ conda create -n isy jupyter keras matplotlib pandas scikit-learn
 # Dotfiles
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/arch-installer
+git clone https://github.com/astier/scripts
 git clone https://github.com/astier/dotfiles
 cd dotfiles && sh install.sh
+cd ../scripts && sh install.sh
 
 # Suckless
 cd ~/Projects
