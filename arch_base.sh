@@ -5,7 +5,7 @@ timedatectl set-ntp 1
 
 # Partition
 gdisk /dev/sda
-# boot +256M EF00, root
+# boot +550M EF00, root
 
 # Encrypt
 mkdir key
