@@ -15,7 +15,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S biber compton evince feh firefox git htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulseaudio pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit # nvidia
+sudo pacman -S arc-gtk-theme biber compton evince feh firefox git htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulseaudio pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit # nvidia
 sudo systemctl stop dhcpcd.service
 sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
 pacman -Rns dhcpcd nano netctl vi
@@ -23,7 +23,7 @@ pacman -Rns dhcpcd nano netctl vi
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs && cd .. && rm -rf yay
-yay -S dropbox i3lock-blur nerd-fonts-ubuntu-mono xbanish
+yay -S dropbox flat-remix-git i3lock-blur nerd-fonts-ubuntu-mono xbanish
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
