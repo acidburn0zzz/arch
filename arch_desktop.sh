@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set x- and tty-keymap
-localectl --no-convert set-x11-keymap de pc105
+# localectl --no-convert set-x11-keymap de pc105
 
 # Autologin
 sudo systemctl edit getty@tty1.service
@@ -18,7 +18,7 @@ sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mir
 sudo pacman -S arc-gtk-theme biber compton feh firefox git htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo systemctl stop dhcpcd.service
 sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
-pacman -Rns dhcpcd nano netctl vi
+sudo pacman -Rns dhcpcd nano netctl vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -35,10 +35,10 @@ conda create -n isy jupyter keras matplotlib pandas scikit-learn
 # Dotfiles
 mkdir ~/Projects && cd ~/Projects || exit
 git clone https://github.com/astier/dotfiles
-cd dotfiles && sh install.sh
+sh dotfiles/install.sh
+. ~/.bashrc
 
 # Suckless
-cd ~/Projects || exit
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
@@ -47,7 +47,7 @@ cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
 
 # Neovim
-conda create -n nvi psutil python
+conda create -n nvi psutil
 conda activate nvi
 conda install -c conda-forge black pynvim
 pip install neovim-remote
@@ -62,4 +62,4 @@ nvim -c PlugInstall
 cd ~/Projects/ || exit
 git clone https://github.com/astier/arch-installer
 git clone https://github.com/astier/scripts
-cd ../scripts && sh install.sh
+sh scripts/install.sh

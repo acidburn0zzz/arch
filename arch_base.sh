@@ -4,6 +4,7 @@ loadkeys de
 timedatectl set-ntp 1
 
 # Partition
+# nvme0n1 (p1, p2)
 gdisk /dev/sda
 # boot +550M EF00, root
 
