@@ -6,6 +6,6 @@ My installation-scripts for [Arch Linux](https://www.archlinux.org/). This setup
 - **Encryption:** LUKS disk-encryption (except boot partition) via dm-encrypt/cryptsetup.
 - **Decryption:** Keyfile on an USB-stick which needs to be plugged in during bootup. No manual typing of the password required.
 - **Bootloader:** systemd-boot
-- **DE:** suckless-tools (dwm, dmenu, dwmstatus, st)
+- **DE:** suckless-tools (dwm, dmenu, st)
 
 ![My Linux Rice](https://github.com/astier/arch-installer/blob/master/2019-02-24-190242_1920x1080_scrot.png)
