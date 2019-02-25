@@ -22,7 +22,8 @@ sudo localectl --no-convert set-x11-keymap de pc105
 
 # AUR
 git clone https://aur.archlinux.org/yay
-cd yay && makepkg -Ccirs && cd .. && rm -rf yay
+cd yay && makepkg -Ccirs
+cd .. && rm -rf yay
 yay -S dropbox flat-remix-git i3lock-blur nerd-fonts-ubuntu-mono xbanish
 
 # Dotfiles
