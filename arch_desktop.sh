@@ -15,10 +15,10 @@ sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mir
 sudo pacman -S arc-gtk-theme biber compton feh firefox git htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl vi
 
-# Misc
+# Config
 sudo systemctl stop dhcpcd.service
 sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
-sudo localectl --no-convert set-x11-keymap de pc105
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 
 # AUR
 git clone https://aur.archlinux.org/yay
