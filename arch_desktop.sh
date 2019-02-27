@@ -18,6 +18,7 @@ sudo pacman -Rns dhcpcd nano netctl vi
 # Config
 sudo systemctl stop dhcpcd.service
 sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
+sudo ufw enable
 sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 
 # AUR
