@@ -41,7 +41,7 @@ vi /etc/hosts
 # 127.0.1.1     hostname.localdomain    hostname
 
 # Language
-echo KEYMAP=de-latin1 > /etc/vconsole.conf
+echo KEYMAP=de-latin1-nodeadkeys > /etc/vconsole.conf
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 vi /etc/locale.gen  # Uncomment: en_US.UTF-8 UTF-8
 locale-gen
