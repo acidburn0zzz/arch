@@ -8,4 +8,4 @@ My installation-scripts for [Arch Linux](https://www.archlinux.org/). This setup
 - **Bootloader:** systemd-boot
 - **DE:** suckless-tools (dwm, dmenu, st)
 
-![My Linux Rice](https://github.com/astier/arch-installer/blob/master/2019-02-24-190242_1920x1080_scrot.png)
+![screenshot](https://github.com/astier/arch-installer/blob/master/screenshot.png)
