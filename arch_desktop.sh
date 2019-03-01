@@ -44,9 +44,11 @@ conda update --all
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
+git clone https://github.com/astier/sxiv
 cd dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
+cd ../sxiv && sudo make install clean
 
 # Neovim
 conda create -n nvi psutil
