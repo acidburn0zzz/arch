@@ -48,6 +48,7 @@ git clone https://github.com/astier/sxiv
 cd dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
+sudo ln /usr/local/bin/st /usr/bin/xterm
 cd ../sxiv && sudo make install clean
 
 # Neovim
