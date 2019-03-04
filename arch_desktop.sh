@@ -65,6 +65,6 @@ nvim -c PlugInstall
 
 # Projects
 cd ~/Projects/ || exit
-git clone https://github.com/astier/arch-installer
+git clone https://github.com/astier/arch
 git clone https://github.com/astier/scripts
 sh scripts/install.sh
