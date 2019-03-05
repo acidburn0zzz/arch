@@ -55,13 +55,13 @@ cd ../sxiv && sudo make install clean
 conda create -n nvi python
 conda activate nvi
 pip install pynvim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim -c PlugInstall
 # conda install -c conda-forge black
 # conda update --all
 # conda activate isy
 # conda install isort jedi pylint rope
 # pip install python-language-server
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim -c PlugInstall
 
 # Projects
 cd ~/Projects/ || exit
