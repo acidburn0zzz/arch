@@ -13,7 +13,7 @@ sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mir
 
 # Packages
 sudo pacman -S arc-gtk-theme biber compton firefox git hsetroot htop libexif libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx perl-authen-sasl pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xorg-server xorg-xsetroot xorg-xinit xsel # nvidia
-sudo pacman -Rns dhcpcd nano netctl vi
+sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # Config
 sudo systemctl stop dhcpcd.service
