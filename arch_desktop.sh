@@ -52,9 +52,9 @@ sudo ln /usr/local/bin/st /usr/bin/xterm
 cd ../sxiv && sudo make install clean
 
 # Neovim
-# conda create -n nvi python
-# conda activate nvi
-# pip install pynvim
+conda create -n nvi python
+conda activate nvi
+pip install pynvim
 # conda install -c conda-forge black
 # conda update --all
 # conda activate isy
