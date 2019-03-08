@@ -9,10 +9,10 @@ gdisk /dev/sda
 # boot +550M EF00, root
 
 # Encrypt
-mkdir key
-mount -L USB key
-cryptsetup luksFormat /dev/sda2 -d key/.log
-cryptsetup open /dev/sda2 root -d key/.log
+mkdir usb
+mount -L USB usb
+cryptsetup luksFormat /dev/sda2 -d usb/key
+cryptsetup open /dev/sda2 root -d usb/key
 
 # Filesystems
 mkfs.vfat -F16 -n BOOT /dev/sda1
