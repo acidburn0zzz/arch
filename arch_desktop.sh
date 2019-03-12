@@ -52,11 +52,11 @@ sudo ln /usr/local/bin/st /usr/bin/xterm
 cd ../sxiv && sudo make install clean
 
 # Neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim -c PlugInstall
 conda create -n nvi psutil
 conda activate nvi
 pip install neovim-remote
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim -c PlugInstall
 # conda install -c conda-forge black
 # conda update --all
 # conda activate isy
