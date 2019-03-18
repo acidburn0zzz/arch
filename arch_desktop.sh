@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton firefox git hsetroot htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
+sudo pacman -S arc-gtk-theme biber compton feh firefox git hsetroot htop libreoffice-fresh light neovim networkmanager noto-fonts-cjk numlockx pulsemixer scrot shellcheck texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # Config
@@ -44,12 +44,10 @@ conda update --all
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
-git clone https://github.com/astier/sxiv
 cd dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
-cd ../sxiv && sudo make install clean
 
 # Neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
