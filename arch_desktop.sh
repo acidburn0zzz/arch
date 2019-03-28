@@ -28,7 +28,8 @@ cd .. && rm -rf yay
 yay -S dropbox flat-remix-git i3lock-blur nerd-fonts-ubuntu-mono xbanish
 
 # Dotfiles
-mkdir Projects/ && cd Projects/ || exit
+mkdir ~/Projects/
+cd ~/Projects/
 git clone https://github.com/astier/dotfiles
 sh dotfiles/install.sh
 . dotfiles/dotfiles/.bashrc
@@ -54,15 +55,13 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 nvim -c PlugInstall
 conda create -n nvi psutil
 conda activate nvi
-pip install neovim-remote
-# conda install -c conda-forge black
-# conda update --all
+pip install neovim-remote # black
 # conda activate isy
 # conda install isort jedi pylint rope
 # pip install python-language-server
 
 # Projects
-cd ~/Projects/ || exit
+cd ~/Projects/
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/scripts
 sh scripts/install.sh
