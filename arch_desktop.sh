@@ -1,23 +1,32 @@
 #!/usr/bin/env bash
 
 # Autologin
-sudo systemctl edit getty@tty1.service
+systemctl edit getty@tty1.service
 # [Service]
 # ExecStart=
 # ExecStart=-/usr/bin/agetty -a aleks -J %I $TERM
 
 # Mirrorlist
-sudo systemctl start dhcpcd.service
+systemctl start dhcpcd.service
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim networkmanager noto-fonts-cjk numlockx pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
+sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw wpa_supplicant xdg-utils xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl vi
 
-# Config
-sudo systemctl stop dhcpcd.service
-sudo systemctl enable --now NetworkManager.service systemd-timesyncd.service ufw.service
+# Network
+systemctl enable systemd-networkd.service systemd-resolved.service
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo nvim /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
+# ctrl_interface=/run/wpa_supplicant
+# ctrl_interface_group=wheel
+# update_config=1
+chmod 600 /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
+systemctl enable wpa_supplicant@wlp1s0.service
+
+# Misc
+systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 
