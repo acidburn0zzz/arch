@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw wpa_supplicant xdg-utils xorg-server xorg-xsetroot xorg-xinit xsel zathura-pdf-poppler # nvidia
+sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw wpa_supplicant xdg-utils xorg-server xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl vi
 
 # Network
@@ -34,7 +34,7 @@ sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -rf yay
-yay -S dropbox flat-remix-git i3lock-blur nerd-fonts-ubuntu-mono xbanish
+yay -S dropbox flat-remix-git i3lock-blur xbanish
 
 # Dotfiles
 mkdir ~/Projects/
