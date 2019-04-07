@@ -23,7 +23,7 @@ mount -L BOOT /mnt/boot
 # Install
 vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode
+pacstrap /mnt base base-devel bash-completion intel-ucode # wpa_supplicant
 genfstab -L /mnt >> /mnt/etc/fstab
 
 # Time
