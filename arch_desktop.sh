@@ -32,7 +32,7 @@ pip install neovim-remote # black
 # conda install isort jedi pylint rope
 # pip install python-language-server
 
-# Dotfiles & Projects
+# Dotfiles & Scripts
 mkdir ~/Projects/
 cd ~/Projects/
 git clone https://github.com/astier/arch
