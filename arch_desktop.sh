@@ -12,7 +12,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git iwd light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler
+sudo pacman -S arc-gtk-theme biber compton feh firefox git iwd light neovim noto-fonts-cjk numlockx pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # Network
