@@ -15,20 +15,19 @@ sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mir
 sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw wpa_supplicant xdg-utils xorg-server xorg-xinit xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl vi
 
-# Network
-systemctl enable systemd-networkd.service systemd-resolved.service
+# Misc
+systemctl enable systemd-networkd.service systemd-resolved.service systemd-timesyncd.service ufw.service
 sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo ufw enable
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
+
+# wpa_supplicant
 sudo nvim /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
 # ctrl_interface=/run/wpa_supplicant
 # ctrl_interface_group=wheel
 # update_config=1
 chmod 600 /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
 systemctl enable wpa_supplicant@wlp1s0.service
-
-# Misc
-systemctl enable systemd-timesyncd.service ufw.service
-sudo ufw enable
-sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 
 # AUR
 git clone https://aur.archlinux.org/yay
