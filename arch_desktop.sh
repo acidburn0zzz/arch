@@ -12,22 +12,13 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw wpa_supplicant xdg-utils xorg-server xorg-xinit xsel zathura-pdf-poppler # nvidia
-sudo pacman -Rns dhcpcd nano netctl vi
+sudo pacman -S arc-gtk-theme biber compton feh firefox git iwd light neovim noto-fonts-cjk pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xsel zathura-pdf-poppler
+sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
-# Misc
-systemctl enable systemd-networkd.service systemd-resolved.service systemd-timesyncd.service ufw.service
+# Network
+systemctl enable systemd-ead.service systemd-iwd.service systemd-networkd.service systemd-resolved.service ufw.service
 sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo ufw enable
-sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
-
-# wpa_supplicant
-sudo nvim /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
-# ctrl_interface=/run/wpa_supplicant
-# ctrl_interface_group=wheel
-# update_config=1
-chmod 600 /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
-systemctl enable wpa_supplicant@wlp1s0.service
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -73,3 +64,7 @@ cd ~/Projects/
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/scripts
 sh scripts/install.sh
+
+# Misc
+systemctl enable systemd-timesyncd.service
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
