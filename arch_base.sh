@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-loadkeys de
-timedatectl set-ntp 1
-
 # Partition
 # nvme0n1 (p1, p2)
 gdisk /dev/sda
@@ -24,27 +21,31 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Install
-vi /etc/pacman.d/mirrorlist  # Move server of choice to the top
+vi /etc/pacman.d/mirrorlist
+# Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode
 genfstab -L /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
 
 # Time
+timedatectl set-ntp 1
+arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 
 # Host
-echo hostname > /etc/hostname
+vi /etc/hostname
+# hostname
 vi /etc/hosts
 # 127.0.0.1     localhost
 # ::1           localhost
 # 127.0.1.1     hostname.localdomain    hostname
 
 # Language
-echo KEYMAP=de-latin1-nodeadkeys > /etc/vconsole.conf
-echo LANG=en_US.UTF-8 > /etc/locale.conf
-vi /etc/locale.gen  # Uncomment: en_US.UTF-8 UTF-8
+vi /etc/locale.gen
+# Uncomment en_US.UTF-8 UTF-8
 locale-gen
+vi /etc/locale.conf
+# LANG=en_US.UTF-8
 
 # Bootloader
 bootctl install
@@ -69,7 +70,8 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # User
-EDITOR=vi visudo  # Uncomment %wheel ALL=(ALL) ALL
+EDITOR=vi visudo
+# Uncomment %wheel ALL=(ALL) ALL
 useradd -mG wheel aleks
 passwd aleks
 passwd
