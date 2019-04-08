@@ -56,14 +56,17 @@ vi /boot/loader/loader.conf
 # timeout   0
 # editor    0
 vi /boot/loader/entries/arch.conf
-# title     Arch Linux
-# linux     /vmlinuz-linux
-# initrd    /intel-ucode.img
-# initrd    /initramfs-linux.img
-# options   cryptdevice=/dev/sda2:root
-# options   cryptkey=LABEL=USB:vfat:key
-# options   root=LABEL=ROOT rw
-# options   loglevel=3
+# title		Arch Linux
+# linux		/vmlinuz-linux
+# initrd 	/intel-ucode.img
+# initrd 	/initramfs-linux.img
+# options	cryptdevice=/dev/sda2:root
+# options	cryptkey=LABEL=USB:vfat:key
+# options	root=LABEL=ROOT rw
+# options	loglevel=3
+# Disable bluetooth, watchdog, sd-card, hdmi-audio and web-cam
+# options	module_blacklist=bluetooth,btusb,iTCO_vendor_support,iTCO_wdt,sdhci,snd_hda_codec_hdmi,uvcvideo
+# options	nowatchdog
 
 # Initramfs
 vi /etc/mkinitcpio.conf
