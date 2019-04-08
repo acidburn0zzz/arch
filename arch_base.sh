@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Establish internet-connection first
+timedatectl set-ntp 1
+
 # Partition
 # nvme0n1 (p1, p2)
 gdisk /dev/sda
@@ -25,10 +28,9 @@ vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode # wpa_supplicant
 genfstab -L /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
 
 # Time
-timedatectl set-ntp 1
-arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 
@@ -59,7 +61,7 @@ vi /boot/loader/entries/arch.conf
 # initrd    /intel-ucode.img
 # initrd    /initramfs-linux.img
 # options   cryptdevice=/dev/sda2:root
-# options   cryptkey=LABEL=USB:vfat:.log
+# options   cryptkey=LABEL=USB:vfat:key
 # options   root=LABEL=ROOT rw
 # options   loglevel=3
 
