@@ -7,7 +7,7 @@ My installation-scripts for [Arch Linux](https://www.archlinux.org/). Currently 
 - **Encryption:** LUKS encryption of the root-partition via dm-encrypt/cryptsetup. For decryption an USB-stick with the key needs to be plugged in during bootup.
 - **Bootloader:** systemd-boot
 - **Network-Management**: systemd-networkd, systemd-resolved + iwd (much better than wpa_supplicant)
-- **Power-Management**: systemd-logind
+- **Power-Management**: systemd-logind + DPMS
 - **Time-Syncronization**: systemd-timesyncd
 
 ## Encryption
