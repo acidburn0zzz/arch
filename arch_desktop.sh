@@ -13,6 +13,7 @@ sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mir
 
 # Packages
 sudo pacman -S arc-gtk-theme biber compton feh firefox git iwd light neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler # nvidia
+sudo pacman -Rns nano s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -34,7 +35,6 @@ conda create -n nvi psutil
 conda activate nvi
 pip install neovim-remote # black
 conda deactivate
-sudo pacman -Rns nano vi
 # conda activate isy
 # conda install isort jedi pylint rope
 # pip install python-language-server
