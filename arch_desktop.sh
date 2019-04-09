@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
+# Internet
+sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
+sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
+# Establish internet-connection via iwd
+
 # Autologin
 sudo systemctl edit getty@tty1.service
 # [Service]
 # ExecStart=
 # ExecStart=-/usr/bin/agetty -a aleks -J %I $TERM
 
-# Mirrorlist
-systemctl start dhcpcd.service
-sudo pacman -S reflector
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler # nvidia
-sudo pacman -Rns nano s-nail vi
+sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler # nvidia
+sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -58,11 +58,9 @@ git clone https://github.com/astier/scripts
 cd ../dotfile && sh dotfiles/install.sh
 cd ../scripts && sh scripts/install.sh
 
-# Network
-sudo systemctl enable ead.service iwd.service systemd-networkd.service systemd-resolved.service ufw.service
+# Misc
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
-sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
-sudo pacman -Rns dhcpcd netctl
 
-sudo systemctl enable systemd-timesyncd.service
 sudo reboot
