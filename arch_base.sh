@@ -65,7 +65,7 @@ vi /boot/loader/entries/arch.conf
 # options	root=LABEL=ROOT rw
 # options	loglevel=3
 # Disable bluetooth, watchdog, sd-card, hdmi-audio and web-cam
-# options	module_blacklist=bluetooth,btusb,iTCO_vendor_support,iTCO_wdt,sdhci,snd_hda_codec_hdmi,uvcvideo
+# options	module_blacklist=btusb,iTCO_vendor_support,iTCO_wdt,sdhci,snd_hda_codec_hdmi,uvcvideo
 # options	nowatchdog
 
 # Initramfs
