@@ -59,9 +59,10 @@ cd ../dotfile && sh dotfiles/install.sh
 cd ../scripts && sh scripts/install.sh
 
 # Network
-sudo systemctl enable ead.service iwd.service systemd-networkd.service systemd-resolved.service systemd-timesyncd.service ufw.service
+sudo systemctl enable ead.service iwd.service systemd-networkd.service systemd-resolved.service ufw.service
 sudo ufw enable
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo pacman -Rns dhcpcd netctl
 
+sudo systemctl enable systemd-timesyncd.service
 sudo reboot
