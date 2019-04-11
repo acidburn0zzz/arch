@@ -15,6 +15,11 @@ sudo systemctl edit getty@tty1.service
 sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel zathura-pdf-poppler # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
+# Misc
+sudo systemctl enable --now systemd-timesyncd.service ufw.service
+sudo ufw enable
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
@@ -57,10 +62,5 @@ git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 cd ../dotfile && sh dotfiles/install.sh
 cd ../scripts && sh scripts/install.sh
-
-# Misc
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo systemctl enable systemd-timesyncd.service ufw.service
-sudo ufw enable
 
 sudo reboot
