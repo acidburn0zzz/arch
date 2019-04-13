@@ -57,10 +57,11 @@ cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
 
 # Dotfiles & Scripts
+cd ~/Projects/
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
-cd ../dotfile && sh dotfiles/install.sh
-cd ../scripts && sh scripts/install.sh
+sh dotfile/dotfiles/install.sh
+sh scripts/scripts/install.sh
 
 sudo reboot
