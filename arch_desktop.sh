@@ -61,7 +61,7 @@ cd ~/Projects/
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
-sh dotfile/dotfiles/install.sh
-sh scripts/scripts/install.sh
+sh dotfiles/install.sh
+sh scripts/install.sh
 
 sudo reboot
