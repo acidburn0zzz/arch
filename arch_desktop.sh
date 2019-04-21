@@ -12,7 +12,7 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a aleks -J %I $TERM
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel # nvidia
+sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim newsboat noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # Misc
