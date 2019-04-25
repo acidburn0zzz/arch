@@ -4,18 +4,17 @@
 timedatectl set-ntp 1
 
 # Partition
-# nvme0n1 (p1, p2)
-gdisk /dev/sda
+gdisk /dev/nvme0n1
 # boot +550M EF00, root
 
 # Encrypt
 mkdir usb
 mount -L USB usb
-cryptsetup luksFormat /dev/sda2 -d usb/key
-cryptsetup open /dev/sda2 root -d usb/key
+cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
+cryptsetup open /dev/nvme0n1p2 root -d usb/key
 
 # Filesystems
-mkfs.vfat -F16 -n BOOT /dev/sda1
+mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
 mkfs.ext4 -L ROOT /dev/mapper/root
 
 # Mount
@@ -60,7 +59,7 @@ vi /boot/loader/entries/arch.conf
 # linux		/vmlinuz-linux
 # initrd 	/intel-ucode.img
 # initrd 	/initramfs-linux.img
-# options	cryptdevice=/dev/sda2:root
+# options	cryptdevice=/dev/nvme0n1p2:root
 # options	cryptkey=LABEL=USB:vfat:key
 # options	root=LABEL=ROOT rw
 # options	loglevel=3
