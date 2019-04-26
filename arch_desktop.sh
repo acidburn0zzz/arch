@@ -16,6 +16,7 @@ sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fon
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # Misc
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 sudo systemctl enable --now systemd-timesyncd.service ufw.service
 sudo ufw enable
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist

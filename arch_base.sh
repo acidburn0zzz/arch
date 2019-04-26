@@ -42,11 +42,13 @@ vi /etc/hosts
 # 127.0.1.1     hostname.localdomain    hostname
 
 # Language
+vi /etc/vconsole.conf
+# KEYMAP=de-latin1-nodeadkeys
+vi /etc/locale.conf
+# LANG=en_US.UTF-8
 vi /etc/locale.gen
 # Uncomment en_US.UTF-8 UTF-8
 locale-gen
-vi /etc/locale.conf
-# LANG=en_US.UTF-8
 
 # Bootloader
 bootctl install
