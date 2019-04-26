@@ -50,11 +50,9 @@ conda deactivate
 # Suckless
 mkdir Projects/
 cd Projects/
-git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
-cd dmenu && sudo make install clean
-cd ../dwm && sudo make install clean
+cd dwm && sudo make install clean
 cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
 
