@@ -15,17 +15,18 @@ sudo systemctl edit getty@tty1.service
 sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot texlive-bibtexextra texlive-core ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xorg-xsetroot xsel # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
-# Misc
-sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
-sudo systemctl enable --now systemd-timesyncd.service ufw.service
-sudo ufw enable
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
 yay -S dropbox flat-remix-git i3lock-blur nerd-fonts-ubuntu-mono xbanish
+
+# Config
+systemctl --user enable dropbox.service
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
+sudo systemctl enable --now systemd-timesyncd.service ufw.service
+sudo ufw enable
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
