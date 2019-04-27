@@ -16,7 +16,7 @@ The hard-drive is 256-bit encrypted and can only be decrypted via an USB-Stick w
 
 ## Suckless
 
-I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as possible ([dwm](https://dwm.suckless.org/), [dmenu](https://tools.suckless.org/dmenu/), [slock](https://tools.suckless.org/slock/) [st](https://st.suckless.org/)). This makes the system very minimal, lightweight, efficient and highly customizable.
+I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as possible ([dwm](https://dwm.suckless.org/), [dmenu](https://tools.suckless.org/dmenu/), [slock](https://tools.suckless.org/slock/), [st](https://st.suckless.org/)). This makes the system very minimal, lightweight, efficient and highly customizable.
 
 ## Systemd
 I try to use systemd as much as possible. Although, some people don't like systemd and see it as a security-risk and bloat my philosophy is that since I am already using it because of Arch I might as well use its full potential to avoid adding additional dependencies to solve tasks which systemd already can solve. This includes the bootloader, power-management, network-management and time-synchronisation.
