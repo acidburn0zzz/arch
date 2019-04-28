@@ -12,14 +12,14 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a aleks -J %I $TERM
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot slock texlive-bibtexextra ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot slock texlive-bibtexextra ttf-dejavu ufw xdg-utils xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
-yay -S dropbox flat-remix-git xbanish
+yay -S dropbox xbanish
 
 # Config
 systemctl --user enable dropbox.service
