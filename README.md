@@ -20,7 +20,3 @@ I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as p
 
 ## Systemd
 I try to use systemd as much as possible. Although, some people don't like systemd and see it as a security-risk and bloat my philosophy is that since I am already using it because of Arch I might as well use its full potential to avoid adding additional dependencies to solve tasks which systemd already can solve. This includes the bootloader, power-management, network-management and time-synchronisation.
-
-## Screenshots
-
-![screenshot](https://github.com/astier/arch-installer/blob/master/screenshot.png)
