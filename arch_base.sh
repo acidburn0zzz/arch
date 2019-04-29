@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Establish internet-connection first
+loadkeys de
+# Establish internet-connection
 timedatectl set-ntp 1
 
 # Partition
