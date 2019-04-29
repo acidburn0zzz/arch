@@ -14,9 +14,9 @@ My installation-scripts for [Arch Linux](https://www.archlinux.org/). Currently 
 
 The hard-drive is 256-bit encrypted and can only be decrypted via an USB-Stick which must be plugged in at bootup. This is handy not only because it protects your data from thief's and snoopy repairmen (in case you give your computer away for repair) but also because no manual typing of the password at bootup is required. The hard-drive gets automatically encrypted as long as the key is plugged in. Combined with auto-login starting your machine becomes a bliss.
 
+## Systemd
+I try to use systemd as much as possible. Although, some people don't like systemd and see it as a security-risk and bloat my philosophy is that since I am already using it because of Arch I might as well use its full potential to avoid adding additional dependencies to solve tasks which systemd already can solve. This includes the bootloader, power-management, network-management and time-synchronisation.
+
 ## Suckless
 
 I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as possible ([dwm](https://dwm.suckless.org/), [dmenu](https://tools.suckless.org/dmenu/), [slock](https://tools.suckless.org/slock/), [st](https://st.suckless.org/)). This makes the system very minimal, lightweight, efficient and highly customizable.
-
-## Systemd
-I try to use systemd as much as possible. Although, some people don't like systemd and see it as a security-risk and bloat my philosophy is that since I am already using it because of Arch I might as well use its full potential to avoid adding additional dependencies to solve tasks which systemd already can solve. This includes the bootloader, power-management, network-management and time-synchronisation.
