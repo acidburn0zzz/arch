@@ -20,3 +20,7 @@ I try to use systemd as much as possible. Although, some people don't like syste
 ## Suckless
 
 I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as possible ([dwm](https://dwm.suckless.org/), [dmenu](https://tools.suckless.org/dmenu/), [slock](https://tools.suckless.org/slock/), [st](https://st.suckless.org/)). This makes the system very minimal, lightweight, efficient and highly customizable.
+
+## Screenshot
+
+![screenshot](https://github.com/astier/arch/blob/master/screenshot.png)
