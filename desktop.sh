@@ -28,22 +28,19 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda.bak
 
-# Suckless
+# Projects
 mkdir Projects/
-cd Projects/
-git clone https://github.com/astier/dwm
-git clone https://github.com/astier/st
-cd dwm && sudo make install clean
-cd ../st && sudo make install clean
-sudo ln /usr/local/bin/st /usr/bin/xterm
-
-# Dotfiles & Scripts
-cd ~/Projects/
+cd Projects/ || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
+git clone https://github.com/astier/dwm
 git clone https://github.com/astier/scripts
-sh dotfiles/install.sh
-sh scripts/install.sh
+git clone https://github.com/astier/st
+cd dotfiles && sh install.sh
+cd ../scripts && sh install.sh
+cd ../dwm && sudo make install clean
+cd ../st && sudo make install clean
+sudo ln /usr/local/bin/st /usr/bin/xterm
 
 # Misc
 curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
