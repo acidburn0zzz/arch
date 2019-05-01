@@ -28,7 +28,6 @@ curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda.bak
 . .bashrc
-conda update --all
 
 # Suckless
 mkdir Projects/
