@@ -78,8 +78,8 @@ mkinitcpio -p linux
 # User
 EDITOR=vi visudo
 # Uncomment %wheel ALL=(ALL) ALL
-useradd -mG wheel aleks
-passwd aleks
+useradd -mG wheel username
+passwd usename
 passwd
 passwd -l root
 

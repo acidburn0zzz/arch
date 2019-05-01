@@ -1,32 +1,27 @@
 #!/usr/bin/env bash
 
+# Autologin
+sudo systemctl edit getty@tty1.service
+# [Service]
+# ExecStart=
+# ExecStart=-/usr/bin/agetty -a username -J %I $TERM
+
 # Internet
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # Establish internet-connection via iwd
 
-# Autologin
-sudo systemctl edit getty@tty1.service
-# [Service]
-# ExecStart=
-# ExecStart=-/usr/bin/agetty -a aleks -J %I $TERM
-
 # Packages
-sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer reflector scrot slock texlive-bibtexextra ttf-dejavu ufw unclutter xdg-utils xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S reflector
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -S arc-gtk-theme biber compton feh firefox git light neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot slock texlive-bibtexextra ttf-dejavu ufw unclutter xdg-utils xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
-yay -S dropbox
-
-# Config
-systemctl --user enable dropbox.service
-sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
-sudo systemctl enable --now systemd-timesyncd.service ufw.service
-sudo ufw enable
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+yay -S dropbox neovim-remote
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -34,18 +29,6 @@ sh Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda.bak
 . .bashrc
 conda update --all
-# conda create -n isy jupyter keras matplotlib pandas scikit-learn
-
-# Neovim
-curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-conda create -n nvi psutil
-conda activate nvi
-pip install neovim-remote # black
-conda deactivate
-# conda activate isy
-# conda install isort jedi pylint rope
-# pip install python-language-server
-# conda deactivate
 
 # Suckless
 mkdir Projects/
@@ -63,5 +46,12 @@ git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 sh dotfiles/install.sh
 sh scripts/install.sh
+
+# Misc
+curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+systemctl --user enable dropbox.service
+sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
+sudo systemctl enable systemd-timesyncd.service ufw.service
+sudo ufw enable
 
 sudo reboot
