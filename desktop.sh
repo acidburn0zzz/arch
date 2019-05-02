@@ -44,9 +44,9 @@ sudo ln /usr/local/bin/st /usr/bin/xterm
 
 # Misc
 curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-systemctl --user enable dropbox.service
 sudo localectl set-x11-keymap de pc105 nodeadkeys caps:swapescape
 sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
+systemctl --user enable dropbox.service
 
 sudo reboot
