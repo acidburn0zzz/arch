@@ -26,7 +26,7 @@ yay -S dropbox neovim-remote
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh .bashrc-miniconda.bak
+rm Miniconda3-latest-Linux-x86_64.sh
 
 # Projects
 mkdir Projects/
