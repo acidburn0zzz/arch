@@ -60,8 +60,8 @@ vi /boot/loader/loader.conf
 vi /boot/loader/entries/arch.conf
 # title		Arch Linux
 # linux		/vmlinuz-linux
-# initrd 	/intel-ucode.img
-# initrd 	/initramfs-linux.img
+# initrd	/intel-ucode.img
+# initrd	/initramfs-linux.img
 # options	cryptdevice=/dev/nvme0n1p2:root
 # options	cryptkey=LABEL=USB:vfat:key
 # options	root=LABEL=ROOT rw
