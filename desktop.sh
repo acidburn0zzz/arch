@@ -21,7 +21,7 @@ sudo pacman -Rns dhcpcd nano netctl s-nail vi
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
-yay -S dropbox neovim-remote
+yay -S dropbox neovim-remote nerd-fonts-ubuntu-mono
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
