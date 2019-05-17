@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 loadkeys de
 # Establish internet-connection
@@ -76,7 +76,7 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # User
-EDITOR=vi visudo
+"EDITOR=vi" visudo
 # Uncomment %wheel ALL=(ALL) ALL
 useradd -mG wheel username
 passwd usename

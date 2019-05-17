@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Autologin
 sudo systemctl edit getty@tty1.service
