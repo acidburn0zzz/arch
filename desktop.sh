@@ -14,7 +14,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # Packages
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme compton ctags dash firefox git light neovim noto-fonts-cjk numlockx pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xorg-xset xsel # nvidia
+sudo pacman -S arc-gtk-theme compton ctags dash firefox fzf git light neovim noto-fonts-cjk numlockx pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xorg-xset xsel # nvidia
 sudo pacman -S biber feh perl-authen-sasl scrot shellcheck shfmt texlive-bibtexextra youtube-dl zathura-pdf-poppler
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
