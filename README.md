@@ -23,4 +23,5 @@ I try to use the [suckless-tools](https://suckless.org/philosophy/) as much as p
 
 ## Screenshots
 
-![screenshot](https://github.com/astier/arch/blob/master/screenshot.png)
+![screenshot](https://github.com/astier/arch/blob/master/screenshot_1.png)
+![screenshot](https://github.com/astier/arch/blob/master/screenshot_2.png)
