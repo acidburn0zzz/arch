@@ -10,7 +10,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme compton ctags dash feh firefox fzf git light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S arc-gtk-theme compton dash feh firefox fzf git light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
 # biber ctags mpv noto-fonts-cjk perl-authen-sasl scrot shellcheck shfmt texlive-bibtexextra youtube-dl zathura-pdf-poppler
 sudo pacman -Rns nano netctl s-nail vi
 
@@ -20,7 +20,7 @@ cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
 
 # Neovim
-sudo pacman -S nodejs yarn
+sudo pacman -S ctags nodejs yarn
 yay -S neovim-remote
 yarn global add neovim
 curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
