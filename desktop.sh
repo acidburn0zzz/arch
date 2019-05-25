@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+# Autologin
+sudo systemctl edit getty@tty1.service
+# [Service]
+# ExecStart=
+# ExecStart=-/usr/bin/agetty -a username -J %I $TERM
+
 # Internet
 sudo systemctl start dhcpcd.service
 sudo systemctl enable --now ead.service iwd.service
@@ -51,12 +57,6 @@ sudo ln -sfT dash /usr/bin/sh
 sudo localectl set-x11-keymap us pc105 intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
-
-# Autologin
-sudo systemctl edit getty@tty1.service
-# [Service]
-# ExecStart=
-# ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
 sudo reboot
 
