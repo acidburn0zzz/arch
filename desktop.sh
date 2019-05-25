@@ -10,29 +10,18 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme compton ctags dash feh firefox fzf git light neovim nodejs pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel yarn # nvidia
-# biber mpv noto-fonts-cjk perl-authen-sasl scrot shellcheck shfmt texlive-bibtexextra youtube-dl zathura-pdf-poppler
+sudo pacman -S arc-gtk-theme compton ctags dash feh firefox fzf git light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+# biber ctags mpv noto-fonts-cjk perl-authen-sasl scrot shellcheck shfmt texlive-bibtexextra youtube-dl zathura-pdf-poppler
 sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd .. && rm -fr yay
-yay -S dropbox neovim-remote
-
-# Miniconda
-curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
-
-# Config
-sudo ln -sfT dash /usr/bin/sh
-sudo localectl set-x11-keymap us pc105 intl caps:swapescape
-sudo systemctl enable systemd-timesyncd.service ufw.service
-sudo ufw enable
-systemctl --user enable dropbox.service
 
 # Neovim
+sudo pacman -S nodejs yarn
+yay -S neovim-remote
 yarn global add neovim
 curl -fLo .local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall
@@ -57,6 +46,12 @@ sudo pacman -Rns dhcpcd
 sudo systemctl enable --now systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
+# Misc
+sudo ln -sfT dash /usr/bin/sh
+sudo localectl set-x11-keymap us pc105 intl caps:swapescape
+sudo systemctl enable systemd-timesyncd.service ufw.service
+sudo ufw enable
+
 # Autologin
 sudo systemctl edit getty@tty1.service
 # [Service]
@@ -64,3 +59,14 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
 sudo reboot
+
+# # Miniconda
+# curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# sh Miniconda3-latest-Linux-x86_64.sh
+# rm Miniconda3-latest-Linux-x86_64.sh
+
+# # Dropbox
+# gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+# yay -S dropbox
+# (dropbox &)
+# systemctl --user enable dropbox.service
