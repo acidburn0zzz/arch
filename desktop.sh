@@ -60,13 +60,13 @@ sudo systemctl edit getty@tty1.service
 
 sudo reboot
 
+# # Dropbox
+# gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+# yay -S dropbox
+# systemctl --user enable dropbox.service
+# (dropbox &)
+
 # # Miniconda
 # curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 # sh Miniconda3-latest-Linux-x86_64.sh
 # rm Miniconda3-latest-Linux-x86_64.sh
-
-# # Dropbox
-# gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-# yay -S dropbox
-# (dropbox &)
-# systemctl --user enable dropbox.service
