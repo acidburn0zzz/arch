@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-loadkeys de
 # Establish internet-connection
+# wpa_supplicant -B -D wired -i enp4s0 -c wpa_supplicant-wired-enp4s0.conf
 timedatectl set-ntp 1
 
 # Partition
@@ -43,12 +43,10 @@ vi /etc/hosts
 # 127.0.1.1     hostname.localdomain    hostname
 
 # Language
-vi /etc/vconsole.conf
-# KEYMAP=de-latin1-nodeadkeys
-vi /etc/locale.conf
-# LANG=en_US.UTF-8
 vi /etc/locale.gen
 # Uncomment en_US.UTF-8 UTF-8
+vi /etc/locale.conf
+# LANG=en_US.UTF-8
 locale-gen
 
 # Bootloader
@@ -76,7 +74,7 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # User
-"EDITOR=vi" visudo
+EDITOR=vi visudo
 # Uncomment %wheel ALL=(ALL) ALL
 useradd -mG wheel username
 passwd usename
