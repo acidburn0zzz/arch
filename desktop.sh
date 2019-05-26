@@ -54,7 +54,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Misc
 sudo ln -sfT dash /usr/bin/sh
-sudo localectl set-x11-keymap us pc105 intl caps:swapescape
+sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 
