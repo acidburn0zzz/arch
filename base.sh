@@ -64,6 +64,8 @@ vi /boot/loader/entries/arch.conf
 # options	cryptkey=LABEL=USB:vfat:key
 # options	root=LABEL=ROOT rw
 # options	loglevel=3
+# options	module_blacklist=btusb,iTCO_vendor_support,iTCO_wdt,uvcvideo
+# options	nowatchdog
 
 # Initramfs
 vi /etc/mkinitcpio.conf
