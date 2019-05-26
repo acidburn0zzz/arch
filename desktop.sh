@@ -9,7 +9,7 @@ sudo systemctl edit getty@tty1.service
 # Internet
 sudo systemctl start dhcpcd.service
 sudo systemctl enable --now ead.service iwd.service
-# Establish internet connection via iwd
+# If ethernet not available establish internet connection via iwd
 
 # Mirrorlist
 sudo pacman -S reflector
