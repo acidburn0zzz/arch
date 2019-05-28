@@ -7,9 +7,9 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
 # Internet
-sudo systemctl start dhcpcd.service
-sudo systemctl enable --now ead.service iwd.service
 # If ethernet not available establish internet connection via iwd
+sudo systemctl enable --now ead.service iwd.service
+sudo systemctl start dhcpcd.service
 
 # Mirrorlist
 sudo pacman -S reflector
