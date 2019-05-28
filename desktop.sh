@@ -16,8 +16,8 @@ sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme compton dash feh firefox fzf git light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
-# biber mpv noto-fonts-cjk perl-authen-sasl scrot shellcheck shfmt texlive-bibtexextra unzip youtube-dl zathura-pdf-poppler
+sudo pacman -S arc-gtk-theme compton dash feh firefox fzf git light neovim noto-fonts-cjk pulsemixer scrot slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+# biber perl-authen-sasl shellcheck shfmt texlive-bibtexextra
 sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
