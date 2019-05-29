@@ -16,14 +16,14 @@ sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme compton dash feh firefox fzf git light neovim noto-fonts-cjk pulsemixer scrot slock tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
-# biber perl-authen-sasl shellcheck shfmt texlive-bibtexextra
+sudo pacman -S arc-gtk-theme biber compton dash evince feh firefox fzf git light nautilus neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot shellcheck shfmt slock texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -Ccirs
 cd && rm -fr yay
+yay -S flat-remix
 
 # Projects
 mkdir Projects/
