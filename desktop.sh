@@ -30,11 +30,13 @@ mkdir Projects/
 cd Projects/ || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
+git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/scripts
 git clone https://github.com/astier/st
 cd dotfiles && sh install.sh
 cd ../scripts && sh install.sh
+cd ../dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
