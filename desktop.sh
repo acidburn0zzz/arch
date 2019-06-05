@@ -16,8 +16,8 @@ sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Packages
-sudo pacman -S arc-gtk-theme biber compton dash evince feh firefox fzf git light nautilus neovim noto-fonts-cjk newsboat perl-authen-sasl pulsemixer scrot shellcheck shfmt slock texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
-sudo pacman -Rns nano netctl s-nail vi
+sudo pacman -S arc-gtk-theme biber compton dash evince feh firefox fzf git light nautilus neovim noto-fonts-cjk newsboat perl-authen-sasl pulsemixer scrot slock texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+sudo pacman -Rns nano netctl vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -42,7 +42,7 @@ cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
 
 # Neovim
-sudo pacman -S ctags nodejs yarn
+sudo pacman -S ctags shellcheck shfmt yarn
 yay -S neovim-remote
 yarn global add neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
