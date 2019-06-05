@@ -44,7 +44,6 @@ sudo ln /usr/local/bin/st /usr/bin/xterm
 # Neovim
 sudo pacman -S ctags shellcheck shfmt yarn
 yay -S neovim-remote
-yarn global add neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall
 
