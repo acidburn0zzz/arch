@@ -21,7 +21,7 @@ sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
-cd yay && makepkg -Ccirs
+cd yay && makepkg -is
 cd && rm -fr yay
 
 # Projects
