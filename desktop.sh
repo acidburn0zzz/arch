@@ -70,3 +70,6 @@ sudo reboot
 # curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 # sh Miniconda3-latest-Linux-x86_64.sh
 # rm Miniconda3-latest-Linux-x86_64.sh
+# conda config --set auto_activate_base false
+# source ~/.bashrc
+# conda update --all
