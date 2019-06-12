@@ -24,6 +24,11 @@ git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd && rm -fr yay
 
+# Miniconda
+curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+rm Miniconda3-latest-Linux-x86_64.sh
+
 # Projects
 mkdir Projects/
 cd Projects/ || exit 1
@@ -64,12 +69,3 @@ sudo reboot
 # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 # yay -S dropbox
 # systemctl --user enable dropbox.service
-# (dropbox &)
-
-# # Miniconda
-# curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# sh Miniconda3-latest-Linux-x86_64.sh
-# rm Miniconda3-latest-Linux-x86_64.sh
-# conda config --set auto_activate_base false
-# source ~/.bashrc
-# conda update --all
