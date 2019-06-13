@@ -10,7 +10,7 @@ sudo systemctl edit getty@tty1.service
 sudo systemctl start dhcpcd.service
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme biber cinnamon dash eog evince firefox fzf git nemo-fileroller neovim noto-fonts-cjk scrot termite texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon dash eog evince firefox fzf git nemo-fileroller neovim noto-fonts-cjk scrot texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
@@ -26,8 +26,10 @@ cd Projects/ || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
+git clone https://github.com/astier/st
 cd dotfiles && sh install.sh
 cd ../scripts && sh install.sh
+cd ../st && sudo make install clean
 
 # Neovim
 sudo pacman -S ctags shellcheck shfmt yarn
@@ -48,7 +50,7 @@ sudo ufw enable
 
 # Misc
 sudo ln -sfT dash /usr/bin/sh
-sudo ln /usr/bin/termite /usr/bin/xterm
+sudo ln /usr/local/bin/st /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service
 
