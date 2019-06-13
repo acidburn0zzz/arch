@@ -10,7 +10,7 @@ sudo systemctl edit getty@tty1.service
 sudo systemctl start dhcpcd.service
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme biber cinnamon dash firefox fzf git nemo-fileroller neovim noto-fonts-cjk scrot termite texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon dash eog evince firefox fzf git nemo-fileroller neovim noto-fonts-cjk scrot termite texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns nano netctl s-nail vi
 
 # AUR
