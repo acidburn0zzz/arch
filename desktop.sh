@@ -11,23 +11,11 @@ sudo systemctl edit getty@tty1.service
 sudo systemctl enable --now ead.service iwd.service
 sudo systemctl start dhcpcd.service
 
-# Mirrorlist
-sudo pacman -S reflector
-sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
-
 # Packages
+sudo pacman -S reflector
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S arc-gtk-theme biber dash firefox fzf git hsetroot light neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot slock texlive-bibtexextra tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns nano netctl s-nail vi
-
-# AUR
-git clone https://aur.archlinux.org/yay
-cd yay && makepkg -is
-cd && rm -fr yay
-
-# Miniconda
-curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
 
 # Projects
 mkdir Projects/
@@ -44,6 +32,21 @@ cd ../dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
 sudo ln /usr/local/bin/st /usr/bin/xterm
+
+# AUR
+git clone https://aur.archlinux.org/yay
+cd yay && makepkg -is
+cd && rm -fr yay
+
+# Dropbox
+gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+yay -S dropbox
+systemctl --user enable dropbox.service
+
+# Miniconda
+curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+rm Miniconda3-latest-Linux-x86_64.sh
 
 # Neovim
 sudo pacman -S ctags shellcheck shfmt yarn
@@ -64,8 +67,3 @@ sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 
 sudo reboot
-
-# # Dropbox
-# gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-# yay -S dropbox
-# systemctl --user enable dropbox.service
