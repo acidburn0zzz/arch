@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Establish internet-connection
-# wpa_supplicant -B -D wired -i enp4s0 -c wpa_supplicant-wired-enp4s0.conf
+# wpa_supplicant -BD wired -i enp4s0 -c wpa_supplicant-wired-enp4s0.conf
 timedatectl set-ntp 1
 
 # Partition
@@ -26,7 +26,7 @@ mount -L BOOT /mnt/boot
 # Install
 vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode iwd
+pacstrap /mnt base base-devel bash-completion intel-ucode wpa-supplicant
 genfstab -L /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 

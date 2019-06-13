@@ -6,47 +6,28 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=
 # ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
-# Internet
-# If ethernet not available establish internet connection via iwd
-sudo systemctl enable --now ead.service iwd.service
-sudo systemctl start dhcpcd.service
-
 # Packages
+sudo systemctl start dhcpcd.service
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme biber dash firefox fzf git hsetroot light neovim noto-fonts-cjk perl-authen-sasl pulsemixer scrot slock texlive-bibtexextra tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xsel # nvidia
+sudo pacman -S arc-gtk-theme biber cinnamon dash firefox fzf git nemo-fileroller neovim noto-fonts-cjk scrot termite texlive-bibtexextra tmux ttf-dejavu ufw unclutter xorg-server xorg-xinit xsel # nvidia
 sudo pacman -Rns nano netctl s-nail vi
+
+# AUR
+git clone https://aur.archlinux.org/yay
+cd yay && makepkg -is
+cd && rm -fr yay
+gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+yay -S dropbox flat-remix
 
 # Projects
 mkdir Projects/
 cd Projects/ || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
-git clone https://github.com/astier/dmenu
-git clone https://github.com/astier/dwm
 git clone https://github.com/astier/scripts
-git clone https://github.com/astier/st
 cd dotfiles && sh install.sh
 cd ../scripts && sh install.sh
-cd ../dmenu && sudo make install clean
-cd ../dwm && sudo make install clean
-cd ../st && sudo make install clean
-sudo ln /usr/local/bin/st /usr/bin/xterm
-
-# AUR
-git clone https://aur.archlinux.org/yay
-cd yay && makepkg -is
-cd && rm -fr yay
-
-# Dropbox
-gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-yay -S dropbox
-systemctl --user enable dropbox.service
-
-# Miniconda
-curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
 
 # Neovim
 sudo pacman -S ctags shellcheck shfmt yarn
@@ -54,16 +35,21 @@ yay -S neovim-remote
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall
 
-# networkd & resolved
+# Miniconda
+curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+rm Miniconda3-latest-Linux-x86_64.sh
+
+# Internet
 sudo systemctl stop dhcpcd.service
 sudo pacman -Rns dhcpcd
-sudo systemctl enable systemd-networkd.service systemd-resolved.service
-sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo systemctl enable NetworkManager.service ufw.service
+sudo ufw enable
 
 # Misc
 sudo ln -sfT dash /usr/bin/sh
+sudo ln /usr/bin/termite /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
-sudo systemctl enable systemd-timesyncd.service ufw.service
-sudo ufw enable
+sudo systemctl enable systemd-timesyncd.service
 
 sudo reboot
