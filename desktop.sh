@@ -37,7 +37,6 @@ cd ../suckless && sh setup.sh
 sudo pacman -S ctags shellcheck shfmt yarn
 yay -S neovim-remote
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim -c PlugInstall
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
