@@ -48,6 +48,7 @@ rm Miniconda3-latest-Linux-x86_64.sh
 sudo systemctl stop dhcpcd.service
 sudo pacman -Rns dhcpcd
 sudo systemctl enable systemd-networkd.service systemd-resolved.service ufw.service
+sudo cp /etc/resolv.conf /etc/resolv.conf.bak
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo ufw enable
 
