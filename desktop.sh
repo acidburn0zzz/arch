@@ -23,7 +23,7 @@ cd yay && makepkg -is
 cd && rm -fr yay
 
 # Projects
-mkdir Projects/
+mkdir Projects .config
 cd Projects/ || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
