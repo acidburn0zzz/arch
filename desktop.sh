@@ -21,6 +21,7 @@ sudo pacman -Rns nano netctl s-nail vi
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd && rm -fr yay
+yay -S dropbox
 
 # Projects
 mkdir Projects .config
@@ -55,10 +56,6 @@ sudo ln -sfT dash /usr/bin/sh
 sudo ln /usr/local/bin/st /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service
+systemctl --user enable dropbox.service
 
 sudo reboot
-
-# Dropbox
-# gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-# yay -S dropbox
-# systemctl --user enable dropbox.service
