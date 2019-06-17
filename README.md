@@ -4,7 +4,7 @@ My installation-scripts for [Arch Linux](https://www.archlinux.org/).
 Currently those scripts are just templates for manual installation and are not intended to run on their own.
 
 - **OS:** Arch Linux
-- **DE:** [suckless-tools](https://github.com/astier/suckless)
+- **DE:** [suckless-tools](https://suckless.org/philosophy/)
 - **Encryption:** LUKS encryption via dm-encrypt/cryptsetup.
 An USB-stick with the key needs to be plugged in during bootup in order to decrypt the hard-drive.
 - **Bootloader:** systemd-boot
