@@ -26,9 +26,9 @@ vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode wpa_supplicant
 genfstab -L /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
 
 # Time
+arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 
