@@ -8,6 +8,7 @@ sudo systemctl edit getty@tty1.service
 
 # Internet
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
+sudo cp /etc/resolv.conf /etc/resolv.conf.bak
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Packages
