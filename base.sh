@@ -22,9 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Install
-vi /etc/pacman.d/mirrorlist
-# Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode wpa_supplicant
+pacstrap /mnt base base-devel bash-completion intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
 # Time
@@ -36,33 +34,34 @@ hwclock -w
 vi /etc/hostname
 # hostname
 vi /etc/hosts
-# 127.0.0.1     localhost
-# ::1           localhost
-# 127.0.1.1     hostname.localdomain    hostname
+# 127.0.0.1 localhost
+# ::1       localhost
+# 127.0.1.1 hostname.localdomain hostname
 
 # Language
-vi /etc/locale.gen
-# Uncomment en_US.UTF-8 UTF-8
 vi /etc/locale.conf
 # LANG=en_US.UTF-8
+vi /etc/locale.gen
+# Uncomment en_US.UTF-8 UTF-8
 locale-gen
 
 # Bootloader
 bootctl install
 vi /boot/loader/loader.conf
-# default   arch
-# timeout   0
-# editor    0
+# default arch
+# timeout 0
+# editor  0
 vi /boot/loader/entries/arch.conf
-# title		Arch Linux
-# linux		/vmlinuz-linux
-# initrd	/intel-ucode.img
-# initrd	/initramfs-linux.img
-# options	cryptdevice=/dev/nvme0n1p2:root
-# options	cryptkey=LABEL=USB:vfat:key
-# options	root=LABEL=ROOT rw
-# options	loglevel=3
-# options	nowatchdog
+# title	  Arch Linux
+# linux	  /vmlinuz-linux
+# initrd  /intel-ucode.img
+# initrd  /initramfs-linux.img
+# options cryptdevice=/dev/nvme0n1p2:root
+# options cryptkey=LABEL=USB:vfat:key
+# options root=LABEL=ROOT rw
+# options loglevel=3
+# options nowatchdog
+# options module_blacklist=btusb,iTCO_vendor_support,iTCO_wdt,sdhci,uvcvideo
 
 # Initramfs
 vi /etc/mkinitcpio.conf
