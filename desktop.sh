@@ -7,6 +7,7 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
 # Internet
+# Setup /etc/systemd/network/ first (see arch-wiki for networkd)
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo cp /etc/resolv.conf /etc/resolv.conf.bak
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
@@ -21,8 +22,7 @@ sudo pacman -Rns dhcpcd nano netctl s-nail vi
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay
-sudo pacman -Rns go
-yay -S dropbox neovim-remote nerd-fonts-ubuntu-mono
+yay -S dropbox flat-remix neovim-remote nerd-fonts-ubuntu-mono
 
 # Miniconda
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -53,7 +53,7 @@ sudo ln -sfT dash /usr/bin/sh
 sudo ln /usr/local/bin/st /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service ufw.service
-sudo enable ufw
-systemctl --user enable dropbox.service
+sudo ufw enable
+# systemctl --user enable dropbox.service
 
 sudo reboot
