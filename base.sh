@@ -31,18 +31,15 @@ ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 
 # Host
-vi /etc/hostname
-# hostname
+echo hostname > /etc/hostname
 vi /etc/hosts
 # 127.0.0.1 localhost
 # ::1       localhost
 # 127.0.1.1 hostname.localdomain hostname
 
 # Language
-vi /etc/locale.conf
-# LANG=en_US.UTF-8
-vi /etc/locale.gen
-# Uncomment en_US.UTF-8 UTF-8
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+echo en_US.UTF-8 UTF-8 > /etc/locale.gen
 locale-gen
 
 # Bootloader
