@@ -7,9 +7,8 @@ sudo systemctl edit getty@tty1.service
 # ExecStart=-/usr/bin/agetty -a username -J %I $TERM
 
 # Internet
-# Setup /etc/systemd/network/ first (see arch-wiki for networkd)
+# Setup networkd first (see arch-wiki)
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
-sudo cp /etc/resolv.conf /etc/resolv.conf.bak
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Packages
