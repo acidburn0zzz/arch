@@ -53,6 +53,5 @@ sudo ln /usr/local/bin/st /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
-# systemctl --user enable dropbox.service
 
 sudo reboot
