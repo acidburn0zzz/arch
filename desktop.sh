@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+# Internet
+# Setup networkd first (see arch-wiki)
+sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
+sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
 # Autologin
 sudo systemctl edit getty@tty1.service
 # [Service]
@@ -38,7 +43,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 sudo ln -sfT dash /usr/bin/sh
 sudo ln /usr/local/bin/st /usr/bin/xterm
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
-sudo systemctl enable NetworkManager.service systemd-timesyncd.service ufw.service
+sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 
 sudo reboot

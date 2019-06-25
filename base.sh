@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Install
-pacstrap /mnt base base-devel bash-completion intel-ucode wpa_supplicant
+pacstrap /mnt base base-devel bash-completion intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
 # Time
