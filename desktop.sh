@@ -1,11 +1,5 @@
 #!/usr/bin/env sh
 
-# Autologin
-sudo systemctl edit getty@tty1.service
-# [Service]
-# ExecStart=
-# ExecStart=-/usr/bin/agetty -a username -J %I $TERM
-
 # Internet
 # Setup networkd first (see arch-wiki)
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
@@ -23,13 +17,8 @@ cd yay && makepkg -is
 cd .. && rm -fr yay
 yay -S dropbox flat-remix neovim-remote nerd-fonts-ubuntu-mono
 
-# Miniconda
-curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
-
 # Projects
-mkdir Projects && cd Projects || exit 1
+mkdir ~/Projects && cd ~/Projects || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
@@ -55,3 +44,8 @@ sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 
 sudo reboot
+
+# # Miniconda
+# curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# sh Miniconda3-latest-Linux-x86_64.sh
+# rm Miniconda3-latest-Linux-x86_64.sh
