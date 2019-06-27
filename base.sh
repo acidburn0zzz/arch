@@ -2,11 +2,11 @@
 
 timedatectl set-ntp 1
 
-# Partition
+# Partitions
 gdisk /dev/nvme0n1
 # boot +550M EF00, root
 
-# Encrypt
+# Encryption
 mkdir usb
 mount -L USB usb
 cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
@@ -21,23 +21,15 @@ mount -L ROOT /mnt
 mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
-# Install
+# Installation
 pacstrap /mnt base base-devel bash-completion intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
-# Time
+# Configuration
 arch-chroot /mnt
+echo hostname > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
-
-# Host
-echo hostname > /etc/hostname
-vi /etc/hosts
-# 127.0.0.1 localhost
-# ::1       localhost
-# 127.0.1.1 hostname.localdomain hostname
-
-# Language
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
 locale-gen
