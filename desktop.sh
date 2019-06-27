@@ -8,14 +8,14 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # Packages
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme biber ctags dash dunst feh firefox fzf git light neovim newsboat noto-fonts-cjk pulsemixer scrot slock shellcheck texlive-bibtexextra tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xorg-xsetroot xsel yarn # nvidia
+sudo pacman -S arc-gtk-theme ctags dash dunst firefox fzf git hsetroot light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xsel yarn # nvidia
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay
-yay -S dropbox flat-remix neovim-remote nerd-fonts-ubuntu-mono
+yay -S dropbox neovim-remote
 
 # Projects
 mkdir ~/Projects && cd ~/Projects || exit 1
@@ -44,8 +44,3 @@ sudo systemctl enable systemd-timesyncd.service ufw.service
 sudo ufw enable
 
 sudo reboot
-
-# # Miniconda
-# curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# sh Miniconda3-latest-Linux-x86_64.sh
-# rm Miniconda3-latest-Linux-x86_64.sh
