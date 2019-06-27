@@ -15,6 +15,7 @@ sudo pacman -Rns dhcpcd nano netctl s-nail vi
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay
+sudo pacman -Rns go
 yay -S dropbox neovim-remote
 
 # Projects
