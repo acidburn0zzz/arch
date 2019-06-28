@@ -19,7 +19,7 @@ sudo pacman -Rns go
 yay -S dropbox neovim-remote
 
 # Projects
-mkdir ~/Projects && cd ~/Projects || exit 1
+mkdir ~/projects && cd ~/projects || exit 1
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
@@ -27,7 +27,7 @@ cd dotfiles && sh setup.sh
 cd ../scripts && sh setup.sh
 
 # Suckless
-cd ~/Projects && mkdir suckless && cd suckless || exit
+cd ~/projects && mkdir suckless && cd suckless || exit
 git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
