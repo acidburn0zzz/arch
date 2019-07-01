@@ -7,7 +7,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # Packages
 sudo pacman -S reflector
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S arc-gtk-theme dash dunst firefox fzf git light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xsel yarn
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
