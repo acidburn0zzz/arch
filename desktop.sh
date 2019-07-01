@@ -14,12 +14,12 @@ sudo pacman -Rns dhcpcd nano netctl s-nail vi
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-cd .. && rm -fr yay .config/go-build
+cd && rm -fr yay .config/go-build
 sudo pacman -Rns go
 yay -S dropbox neovim-remote
 
 # Projects
-mkdir ~/projects && cd ~/projects || exit 1
+mkdir projects && cd projects
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
@@ -27,7 +27,7 @@ cd dotfiles && sh setup.sh
 cd ../scripts && sh setup.sh
 
 # Suckless
-cd ~/projects && mkdir suckless && cd suckless || exit
+cd ~/projects && mkdir suckless && cd suckless
 git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
