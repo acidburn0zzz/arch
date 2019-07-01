@@ -22,6 +22,8 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # Installation
+vi /etc/pacman.d/mirrorlist
+# Move server of choice to the top
 pacstrap /mnt base base-devel bash-completion intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
@@ -31,7 +33,8 @@ echo hostname > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
+vi /etc/locale.gen
+# Uncomment en_US.UTF-8 UTF-8
 locale-gen
 
 # Bootloader
