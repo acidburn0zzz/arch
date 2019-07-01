@@ -28,7 +28,6 @@ cd ../scripts && sh setup.sh
 
 # Suckless
 cd ~/projects && mkdir suckless && cd suckless
-git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
