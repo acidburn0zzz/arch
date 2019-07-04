@@ -16,7 +16,7 @@ git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd && rm -fr yay .config/go-build
 sudo pacman -Rns go
-yay -S dropbox neovim-remote
+yay -S dropbox
 
 # Projects
 mkdir projects && cd projects
