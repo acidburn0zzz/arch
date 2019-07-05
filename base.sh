@@ -24,7 +24,7 @@ mount -L BOOT /mnt/boot
 # Installation
 vi /etc/pacman.d/mirrorlist
 # Move server of choice to the top
-pacstrap /mnt base base-devel bash-completion intel-ucode iwd
+pacstrap /mnt base base-devel bash-completion git intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
 # Configuration
@@ -37,30 +37,6 @@ vi /etc/locale.gen
 # Uncomment en_US.UTF-8 UTF-8
 locale-gen
 
-# Bootloader
-bootctl install
-vi /boot/loader/loader.conf
-# default arch
-# timeout 0
-# editor  0
-vi /boot/loader/entries/arch.conf
-# title	  Arch Linux
-# linux	  /vmlinuz-linux
-# initrd  /intel-ucode.img
-# initrd  /initramfs-linux.img
-# options cryptdevice=/dev/nvme0n1p2:root
-# options cryptkey=LABEL=USB:vfat:key
-# options root=LABEL=ROOT rw
-# options loglevel=3
-# options nowatchdog
-# options module_blacklist=btusb,iTCO_vendor_support,iTCO_wdt,sdhci,uvcvideo
-
-# Initramfs
-vi /etc/mkinitcpio.conf
-# MODULES=(vfat)
-# HOOKS=(base udev autodetect modconf block keyboard encrypt filesystems fsck)
-mkinitcpio -p linux
-
 # User
 EDITOR=vi visudo
 # Uncomment %wheel ALL=(ALL) ALL
@@ -69,7 +45,17 @@ passwd usename
 passwd
 passwd -l root
 
-# Exit
+# Bootloader
+bootctl install
+mkdir /home/aleks/projects
+cd /home/aleks/projects
+git clone https://github.com/astier/dotfiles
+cd dotfiles/dotfiles
+cp -f loader /boot
+cp -f mkinitcpio.conf /etc
+mkinitcpio -p linux
+
+# Reboot
 exit
 umount -R /mnt
 reboot
