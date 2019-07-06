@@ -1,22 +1,14 @@
 #!/usr/bin/env sh
 
-timedatectl set-ntp 1
-
 # PARTITIONS
 gdisk /dev/nvme0n1
 # boot +550M EF00, root
-
-# ENCRYPTION
 mkdir usb
 mount -L USB usb
 cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
 cryptsetup open /dev/nvme0n1p2 root -d usb/key
-
-# FILESYSTEMS
 mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
 mkfs.ext4 -L ROOT /dev/mapper/root
-
-# MOUNT
 mount -L ROOT /mnt
 mkdir /mnt/boot
 mount -L BOOT /mnt/boot
@@ -31,10 +23,10 @@ genfstab -L /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 echo hostname > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+timedatectl set-ntp 1
 hwclock -w
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-vi /etc/locale.gen
-# Uncomment en_US.UTF-8 UTF-8
+echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
 locale-gen
 
 # USER
