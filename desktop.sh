@@ -8,7 +8,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # PACKAGES
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme dash firefox light neovim pulsemixer slock tmux ttf-dejavu ufw unclutter xcompmgr xorg-server xorg-xinit xsel
+sudo pacman -S arc-gtk-theme dash firefox light neovim pulsemixer slock tmux ttf-dejavu unclutter xcompmgr xorg-server xorg-xinit xsel
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
@@ -38,7 +38,6 @@ cd ../scripts && sh setup.sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo ln -sfT dash /usr/bin/sh
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
-sudo systemctl enable systemd-timesyncd.service ufw.service
-sudo ufw enable
+sudo systemctl enable systemd-timesyncd.service
 
 sudo reboot
