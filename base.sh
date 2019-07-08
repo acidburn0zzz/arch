@@ -22,7 +22,7 @@ genfstab -L /mnt >> /mnt/etc/fstab
 # CONFIGURATION
 arch-chroot /mnt
 echo hostname > /etc/hostname
-ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 timedatectl set-ntp 1
 hwclock -w
 echo LANG=en_US.UTF-8 > /etc/locale.conf
