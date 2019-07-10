@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # INTERNET
-sudo cp -f ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
+sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
@@ -18,6 +18,13 @@ cd .. && rm -fr yay .config/go-build
 sudo pacman -Rns go
 yay -S dropbox
 
+# PROJECTS
+cd ~/projects
+git clone https://github.com/astier/arch
+git clone https://github.com/astier/scripts
+cd dotfiles && sh setup.sh
+cd ../scripts && sh setup.sh
+
 # SUCKLESS
 mkdir ~/projects/suckless && cd ~/projects/suckless
 git clone https://github.com/astier/dmenu
@@ -26,13 +33,6 @@ git clone https://github.com/astier/st
 cd dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
 cd ../st && sudo make install clean
-
-# PROJECTS
-cd ~/projects
-git clone https://github.com/astier/arch
-git clone https://github.com/astier/scripts
-cd dotfiles && sh setup.sh
-cd ../scripts && sh setup.sh
 
 # CONFIGURATION
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
