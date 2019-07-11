@@ -8,7 +8,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # PACKAGES
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme dash firefox light neovim pulsemixer slock tmux ttf-dejavu unclutter xcompmgr xorg-server xorg-xinit xsel
+sudo pacman -S arc-gtk-theme dash firefox fzf light neovim pulsemixer slock tmux ttf-dejavu unclutter xcompmgr xorg-server xorg-xinit xsel
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
 
 # AUR
