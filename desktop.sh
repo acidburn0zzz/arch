@@ -16,7 +16,7 @@ git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay .config/go-build
 sudo pacman -Rns go
-yay -S dropbox
+yay -S dropbox nerd-fonts-hack
 
 # PROJECTS
 cd ~/projects
