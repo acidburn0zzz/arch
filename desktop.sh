@@ -19,14 +19,14 @@ sudo pacman -Rns go
 yay -S dropbox
 
 # PROJECTS
-cd ~/projects
+cd ~/projects || exit
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/scripts
 cd dotfiles && sh setup.sh
 cd ../scripts && sh setup.sh
 
 # SUCKLESS
-mkdir ~/projects/suckless && cd ~/projects/suckless
+mkdir ~/projects/suckless && cd ~/projects/suckless || exit
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st

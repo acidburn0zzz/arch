@@ -46,9 +46,9 @@ passwd -l root
 bootctl install
 mkdir /home/aleks/projects
 chown -R aleks /home/aleks/projects
-cd /home/aleks/projects
+cd /home/aleks/projects || exit
 git clone https://github.com/astier/dotfiles
-cd dotfiles/dotfiles
+cd dotfiles/dotfiles || exit
 cp -fr loader /boot
 cp -f mkinitcpio.conf /etc
 mkinitcpio -p linux
