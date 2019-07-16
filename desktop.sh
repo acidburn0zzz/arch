@@ -10,12 +10,13 @@ sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S arc-gtk-theme dash firefox light neovim pulsemixer slock tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
 sudo pacman -Rns dhcpcd nano netctl s-nail vi
+rm ~/.bash_logout
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-cd .. && rm -fr yay .config/go-build
 sudo pacman -Rns go
+cd .. && rm -fr yay .cache/go-build
 yay -S dropbox
 
 # PROJECTS
@@ -30,9 +31,9 @@ mkdir ~/projects/suckless && cd ~/projects/suckless || exit
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
-cd dmenu && sudo make install clean
-cd ../dwm && sudo make install clean
-cd ../st && sudo make install clean
+cd dmenu/src && sudo make install clean
+cd ../../dwm/src && sudo make install clean
+cd ../../st/src && sudo make install clean
 
 # CONFIGURATION
 chsh -s /bin/dash
