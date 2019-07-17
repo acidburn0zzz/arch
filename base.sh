@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base base-devel bash-completion efibootmgr git intel-ucode iwd
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd sudo
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab
 # Replace relatime with noatime,lazytime
