@@ -27,13 +27,14 @@ genfstab -L /mnt >> /mnt/etc/fstab
 
 # CONFIGURE
 arch-chroot /mnt
+chattr +i /var/log/lastlog
 echo hostname > /etc/hostname
 ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
+ vi /etc/locale.gen
+# Uncomment en_US.UTF-8 UTF-8
 locale-gen
-chattr +i /var/log/lastlog
 
 # USER
 EDITOR=vi visudo
@@ -41,7 +42,6 @@ EDITOR=vi visudo
 useradd -mG wheel username
 passwd usename
 passwd
-passwd -l root
 
 # EFISTUB
 mkdir /home/aleks/projects
