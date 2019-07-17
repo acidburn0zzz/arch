@@ -9,7 +9,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S arc-gtk-theme base-devel dash firefox light neovim pulsemixer slock tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
-sudo pacman -Rns autoconf automake bison diffutils dhcpcd efibootmgr fakeroot flex gettext iproute2 iputils jfsutils licenses logrotate lvm2 m4 man-pages mdadm nano netctl patch pciutils pkgconf psmisc reiserfsprogs s-nail sed usbutils vi which xfsprogs
+sudo pacman -Rns autoconf automake bison diffutils dhcpcd efibootmgr fakeroot flex gettext iproute2 iputils jfsutils licenses logrotate lvm2 m4 man-pages mdadm nano netctl patch pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 rm ~/.bash_logout
 
 # AUR
