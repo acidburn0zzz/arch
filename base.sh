@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base base-devel bash-completion git intel-ucode iwd
+pacstrap /mnt base base-devel bash-completion efibootmgr git intel-ucode iwd
 genfstab -L /mnt >> /mnt/etc/fstab
 
 # CONFIGURE
@@ -43,15 +43,16 @@ passwd usename
 passwd
 passwd -l root
 
-# BOOTLOADER
-bootctl install
+# EFISTUB
 mkdir /home/aleks/projects
-chown -R aleks /home/aleks/projects
 cd /home/aleks/projects || exit
+git clone https://github.com/astier/scripts
+sh scripts/scripts/efistub.sh
+
+# MKINITCPIO
 git clone https://github.com/astier/dotfiles
-cd dotfiles/dotfiles || exit
-cp -fr loader /boot
-cp -f mkinitcpio.conf /etc
+chown -R aleks /home/aleks/projects
+cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 mkinitcpio -p linux
 
 # REBOOT
