@@ -8,8 +8,8 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # PACKAGES
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme base-devel dash firefox light neovim nodejs pulsemixer slock tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
-sudo pacman -Rns autoconf automake bison diffutils dhcpcd efibootmgr fakeroot flex gettext iproute2 iputils jfsutils licenses logrotate lvm2 m4 man-pages mdadm nano netctl patch pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim pkgconf pulsemixer tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
+sudo pacman -Rns diffutils dhcpcd efibootmgr gettext iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 rm ~/.bash_logout
 
 # AUR
@@ -33,7 +33,7 @@ git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
 cd dmenu/src && sudo make install clean
 cd ../../dwm/src && sudo make install clean
-cd ../../st/src && sudo make install clean
+cd ../../st && sh setup.sh
 
 # CONFIGURATION
 chsh -s /bin/dash

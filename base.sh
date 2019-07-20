@@ -4,7 +4,7 @@ timedatectl set-ntp 1
 
 # PARTITION
 gdisk /dev/nvme0n1
-# boot +550M EF00, root
+# boot +2200 EF00, root
 
 # ENCRYPT
 mkdir usb
@@ -34,8 +34,7 @@ echo hostname > /etc/hostname
 ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
 echo LANG=en_US.UTF-8 > /etc/locale.conf
- vi /etc/locale.gen
-# Uncomment en_US.UTF-8 UTF-8
+echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
 locale-gen
 
 # USER
@@ -43,7 +42,6 @@ EDITOR=vi visudo
 # Uncomment %wheel ALL=(ALL) ALL
 useradd -mG wheel username
 passwd usename
-passwd
 
 # EFISTUB
 mkdir /home/aleks/projects
