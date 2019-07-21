@@ -7,9 +7,10 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # INSTALL
 utils -u
-sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim nodejs pkgconf python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
+sudo pacman -S arc-gtk-theme dash firefox light neovim nodejs python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
 
 # AUR
+sudo pacman -S fakeroot gcc make pkgconf
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 sudo pacman -Rns go
