@@ -39,7 +39,8 @@ locale-gen
 
 # USER
 EDITOR=vi visudo
-# Uncomment %wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) ALL
+# Defaults passwd_timeout=0
 useradd -mG wheel username
 passwd usename
 passwd
