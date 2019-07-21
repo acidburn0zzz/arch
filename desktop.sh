@@ -17,15 +17,8 @@ sudo pacman -Rns go
 cd .. && rm -fr yay .cache/go-build
 yay -S dropbox
 
-# PROJECTS
-cd ~/projects || exit
-git clone https://github.com/astier/arch
-cd dotfiles && sh setup.sh
-cd ../scripts && sh setup.sh
-
 # SUCKLESS
 mkdir ~/projects/suckless && cd ~/projects/suckless || exit
-git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
@@ -34,6 +27,7 @@ cd ../../dwm/src && sudo make install clean
 cd ../../st && sh setup.sh
 
 # CONFIGURATION
+cd ~/projects/dotfiles && sh setup.sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
