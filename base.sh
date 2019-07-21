@@ -42,6 +42,8 @@ EDITOR=vi visudo
 # Uncomment %wheel ALL=(ALL) ALL
 useradd -mG wheel username
 passwd usename
+passwd
+passwd -l root
 
 # EFISTUB
 mkdir /home/aleks/projects
