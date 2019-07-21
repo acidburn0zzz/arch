@@ -8,7 +8,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # PACKAGES
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim pkgconf pulsemixer python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
+sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim pkgconf python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
 sudo pacman -Rns diffutils dhcpcd efibootmgr gettext iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 rm ~/.bash_logout
 
