@@ -50,7 +50,8 @@ passwd -l root
 mkdir /home/aleks/projects
 cd /home/aleks/projects || exit
 git clone https://github.com/astier/scripts
-sh scripts/scripts/efistub.sh
+cd scripts && sh setup.sh
+sh efistub
 
 # MKINITCPIO
 git clone https://github.com/astier/dotfiles

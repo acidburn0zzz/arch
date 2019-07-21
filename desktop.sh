@@ -5,12 +5,9 @@ sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
-# PACKAGES
-sudo pacman -S reflector
-sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim pkgconf python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
-sudo pacman -Rns diffutils dhcpcd efibootmgr gettext iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
-rm ~/.bash_logout
+# INSTALL
+utils -u
+sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim nodejs pkgconf python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -41,5 +38,11 @@ chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
+
+# CLEAN
+sudo pacman -Rns diffutils dhcpcd efibootmgr fakeroot gcc gettext iproute2 iputils jfsutils licenses logrotate lvm2 make man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns $(pacman -Qttdq)
+sudo pacman -Sc
+rm ~/.bash_logout
 
 sudo reboot
