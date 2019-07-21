@@ -10,14 +10,13 @@ utils -u
 sudo pacman -S arc-gtk-theme dash firefox light neovim nodejs python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
 
 # AUR
-sudo pacman -S fakeroot gcc make pkgconf
-git clone https://aur.archlinux.org/yay
-cd yay && makepkg -is
-sudo pacman -Rns go
-cd .. && rm -fr yay .cache/go-build
-yay -S dropbox
+sudo pacman -S fakeroot
+mkdir ~/projects/aur && cd ~/projects/aur || exit
+git clone https://aur.archlinux.org/dropbox
+cd dropbox && makepkg -Ccirs
 
 # SUCKLESS
+sudo pacman -S gcc make pkgconf
 mkdir ~/projects/suckless && cd ~/projects/suckless || exit
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
