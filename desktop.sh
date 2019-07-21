@@ -7,7 +7,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # INSTALL
 utils -u
-sudo pacman -S arc-gtk-theme dash firefox light neovim nodejs python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel
+sudo pacman -S arc-gtk-theme dash firefox light neovim python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
 
 # AUR
 sudo pacman -S fakeroot
