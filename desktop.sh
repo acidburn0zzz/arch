@@ -7,17 +7,15 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # INSTALL
 utils -u
-sudo pacman -S arc-gtk-theme dash firefox light neovim python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
+sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc light make neovim pkgconf python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
 
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay
-sudo pacman -S fakeroot
 yay -S dropbox
 
 # SUCKLESS
-sudo pacman -S gcc make pkgconf
 mkdir ~/projects/suckless && cd ~/projects/suckless || exit
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
@@ -35,7 +33,7 @@ sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd efibootmgr fakeroot gcc go gettext iproute2 iputils jfsutils licenses logrotate lvm2 make man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns diffutils dhcpcd go gettext iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 utils -c
 rm ~/.bash_logout ~/.cache/go-build
 

@@ -51,7 +51,7 @@ mkdir /home/aleks/projects
 cd /home/aleks/projects || exit
 git clone https://github.com/astier/scripts
 cd scripts && sh setup.sh
-sh efistub
+efistub
 
 # MKINITCPIO
 git clone https://github.com/astier/dotfiles
