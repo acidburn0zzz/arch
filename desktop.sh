@@ -10,10 +10,11 @@ utils -u
 sudo pacman -S arc-gtk-theme dash firefox light neovim python-neovim tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
 
 # AUR
+git clone https://aur.archlinux.org/yay
+cd yay && makepkg -is
+cd .. && rm -fr yay
 sudo pacman -S fakeroot
-mkdir ~/projects/aur && cd ~/projects/aur || exit
-git clone https://aur.archlinux.org/dropbox
-cd dropbox && makepkg -Ccirs
+yay -S dropbox
 
 # SUCKLESS
 sudo pacman -S gcc make pkgconf
@@ -34,8 +35,8 @@ sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd efibootmgr fakeroot gcc gettext iproute2 iputils jfsutils licenses logrotate lvm2 make man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns diffutils dhcpcd efibootmgr fakeroot gcc go gettext iproute2 iputils jfsutils licenses logrotate lvm2 make man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 utils -c
-rm ~/.bash_logout
+rm ~/.bash_logout ~/.cache/go-build
 
 sudo reboot
