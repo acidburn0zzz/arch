@@ -21,6 +21,7 @@ sudo systemctl enable NetworkManager.service fstrim.timer systemd-timesyncd.serv
 
 # CLEAN
 sudo pacman -Rns diffutils dhcpcd gettext iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Sc
 rm ~/.bash_logout ~/.cache/go-build
 
 sudo reboot
