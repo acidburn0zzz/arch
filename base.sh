@@ -54,6 +54,7 @@ cd scripts && sh setup.sh
 efistub
 
 # MKINITCPIO
+cd /home/aleks/projects
 git clone https://github.com/astier/dotfiles
 chown -R aleks /home/aleks/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
