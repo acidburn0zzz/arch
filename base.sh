@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base bash-completion efibootmgr git intel-ucode sudo wpa_supplicant
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd sudo
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab
 # Replace relatime with noatime,lazytime,commit=60
