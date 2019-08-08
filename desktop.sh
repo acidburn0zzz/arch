@@ -14,7 +14,7 @@ sudo pacman -S arc-gtk-theme dash fakeroot feh firefox gcc git herbstluftwm ligh
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 cd .. && rm -fr yay
-yay -S dropbox flat-remix
+yay -S dropbox
 
 # PROJECTS
 cd ~/projects || exit
