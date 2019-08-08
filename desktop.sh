@@ -31,7 +31,7 @@ sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns diffutils dhcpcd gettext go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 sudo pacman -Sc
 rm ~/.bash_logout ~/.cache/go-build
 
