@@ -8,7 +8,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 # INSTALL
 sudo pacman -S reflector
 sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pkgconf pulsemixer python-neovim sxkhd tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
+sudo pacman -S arc-gtk-theme dash fakeroot firefox fzf gcc git herbstluftwm light make neovim noto-fonts-cjk pkgconf pulsemixer python-neovim sxkhd tmux ttf-dejavu xcompmgr xorg-server xorg-xinit xsel yarn
 
 # AUR
 git clone https://aur.archlinux.org/yay
@@ -19,9 +19,12 @@ yay -S dropbox flat-remix
 # PROJECTS
 cd ~/projects || exit
 git clone https://github.com/astier/dmenu
+git clone https://github.com/astier/dotfiles
+git clone https://github.com/astier/scripts
 git clone https://github.com/astier/st
-cd dotfiles && sh setup.sh
-cd ../dmenu && sudo make install clean
+cd dmenu && sudo make install clean
+cd ../dotfiles && sh setup.sh
+cd ../scripts && sh setup.sh
 cd ../st && sudo make install clean
 
 # CONFIGURATION
@@ -31,7 +34,7 @@ sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns diffutils dhcpcd efibootmgr go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 sudo pacman -Sc
 rm ~/.bash_logout ~/.cache/go-build
 
