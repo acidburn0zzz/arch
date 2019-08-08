@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base bash-completion efibootmgr intel-ucode iwd sudo
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd sudo
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab
 # Replace relatime with noatime,lazytime,commit=60
@@ -46,11 +46,18 @@ passwd usename
 passwd
 passwd -l root
 
-# BOOT
-efibootmgr -cd /dev/nvme0n1 -p1 -L arch -l /vmlinuz-linux -u 'initrd=\intel-ucode.img initrd=\initramfs-linux.img cryptdevice=/dev/nvme0n1p2:root cryptkey=LABEL=USB:vfat:.log root=LABEL=ROOT rw loglevel=2 udev.log_priority=3 nowatchdog module_blacklist=iTCO_vendor_support,iTCO_wdt'
-vi /etc/mkinitcpio.conf
-# MODULES=(ext4 vfat)
-# HOOKS=(base udev autodetect modconf block keyboard encrypt fsck)
+# EFISTUB
+mkdir /home/aleks/projects
+cd /home/aleks/projects || exit
+git clone https://github.com/astier/scripts
+cd scripts && sh setup.sh
+efistub
+
+# MKINITCPIO
+cd /home/aleks/projects
+git clone https://github.com/astier/dotfiles
+chown -R aleks /home/aleks/projects
+cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 mkinitcpio -p linux
 
 # REBOOT

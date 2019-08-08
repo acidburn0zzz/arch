@@ -19,12 +19,9 @@ yay -S dropbox flat-remix
 # PROJECTS
 cd ~/projects || exit
 git clone https://github.com/astier/dmenu
-git clone https://github.com/astier/dotfiles
-git clone https://github.com/astier/scripts
 git clone https://github.com/astier/st
-cd dmenu && sudo make install clean
-cd ../dotfiles && sh setup.sh
-cd ../scripts && sh setup.sh
+cd dotfiles && sh setup.sh
+cd ../dmenu && sudo make install clean
 cd ../st && sudo make install clean
 
 # CONFIGURATION
@@ -34,7 +31,7 @@ sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
 sudo systemctl enable fstrim.timer systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd efibootmgr go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns diffutils dhcpcd go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 sudo pacman -Sc
 rm ~/.bash_logout ~/.cache/go-build
 
