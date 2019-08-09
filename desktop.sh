@@ -13,7 +13,6 @@ sudo pacman -S arc-gtk-theme dash fakeroot feh firefox gcc git herbstluftwm ligh
 # AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-cd .. && rm -fr yay
 yay -S dropbox
 
 # PROJECTS
@@ -33,6 +32,6 @@ sudo systemctl enable fstrim.timer systemd-timesyncd.service
 # CLEAN
 sudo pacman -Rns diffutils dhcpcd gettext go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 sudo pacman -Sc
-rm ~/.bash_logout ~/.cache/go-build
+cd && rm -fr yay .bash_logout .cache/go-build 
 
 sudo reboot
