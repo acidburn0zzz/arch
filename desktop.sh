@@ -5,7 +5,7 @@ sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
-# INSTALL
+# PACKAGES
 sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc git herbstluftwm light make neovim noto-fonts-cjk pkgconf pulsemixer python-neovim sx sxkhd tmux ttf-dejavu xorg-server xsel yarn
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
@@ -19,7 +19,7 @@ cd dotfiles && sh setup.sh
 cd ../dmenu && sudo make install clean
 cd ../st && sudo make install clean
 
-# CONFIGURATION
+# CONFIG
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
