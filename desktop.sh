@@ -6,11 +6,7 @@ sudo systemctl enable --now ead.service iwd.service systemd-networkd.service sys
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # INSTALL
-sudo pacman -S reflector
-sudo reflector -p https -f16 -l8 --score 4 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc git herbstluftwm light make neovim noto-fonts-cjk pkgconf pulsemixer python-neovim sx sxkhd tmux ttf-dejavu xorg-server xsel yarn
-
-# AUR
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox
