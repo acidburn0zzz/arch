@@ -31,6 +31,6 @@ sudo systemctl enable fstrim.timer systemd-timesyncd.service
 # CLEAN
 sudo pacman -Rns diffutils dhcpcd efibootmgr gettext go iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils pkgconf psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
 sudo pacman -Sc
-cd && rm -fr yay .bash_logout .cache/go-build 
+cd && rm -fr yay .bash_logout .cache/go-build
 
 sudo reboot
