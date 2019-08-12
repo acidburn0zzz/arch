@@ -13,6 +13,7 @@ yay -S dropbox
 
 # SUCKLESS
 cd ~/projects || exit
+git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
