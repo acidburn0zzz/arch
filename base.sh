@@ -46,19 +46,16 @@ passwd usename
 passwd
 passwd -l root
 
-# EFISTUB
+# BOOT
 mkdir /home/aleks/projects
 cd /home/aleks/projects || exit
-git clone https://github.com/astier/scripts
-cd scripts && sh setup.sh
-efistub
-
-# MKINITCPIO
-cd /home/aleks/projects || exit
 git clone https://github.com/astier/dotfiles
+git clone https://github.com/astier/scripts
 chown -R aleks /home/aleks/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
+cd scripts && sh setup.sh
 mkinitcpio -p linux
+efistub
 
 # REBOOT
 exit
