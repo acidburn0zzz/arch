@@ -25,7 +25,7 @@ mount -L BOOT /mnt/boot
 pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd sudo
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab
-# Replace relatime with noatime,lazytime,commit=60
+# Replace relatime with noatime,lazytime,commit=120
 
 # CONFIGURE
 arch-chroot /mnt
