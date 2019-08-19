@@ -7,9 +7,6 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
 sudo pacman -S arc-gtk-theme dash dzen2 fakeroot feh firefox gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer python-neovim rofi sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
-git clone https://aur.archlinux.org/yay
-cd yay && makepkg -is
-yay -S dropbox
 
 # PROJECTS
 cd ~/projects || exit
@@ -17,7 +14,12 @@ git clone https://github.com/astier/st
 cd st && sudo make install clean
 cd ../dotfiles && sh setup.sh
 
-# CONFIG
+# AUR
+git clone https://aur.archlinux.org/yay
+cd yay && makepkg -is
+yay -S dropbox
+
+# CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
