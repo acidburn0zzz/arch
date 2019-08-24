@@ -15,7 +15,7 @@ cd st && sudo make install clean
 cd ../dotfiles && sh setup.sh
 
 # AUR
-git clone https://aur.archlinux.org/yay
+cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox
 
