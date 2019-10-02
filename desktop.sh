@@ -5,8 +5,9 @@ sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
 sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
+
 # PACKAGES
-sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc herbstluftwm light make neovim python-neovim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
+sudo pacman -S arc-gtk-theme dash fakeroot firefox gcc herbstluftwm light make neovim pulsemixer python-neovim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 
 # PROJECTS
 cd ~/projects || exit
@@ -19,7 +20,7 @@ cd ../dotfiles && sh setup.sh
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox
+yay -S dropbox j4-dmenu-desktop
 
 # CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
