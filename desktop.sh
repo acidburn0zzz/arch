@@ -6,27 +6,7 @@ sudo systemctl enable --now ead.service iwd.service systemd-networkd.service sys
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S \
-    arc-gtk-theme \
-    dash \
-    dmenu \
-    fakeroot \
-    firefox \
-    gcc \
-    herbstluftwm \
-    light \
-    make \
-    neovim \
-    noto-fonts-cjk \
-    pulsemixer \
-    python-neovim \
-    sx \
-    sxhkd \
-    tmux \
-    ttf-dejavu \
-    xorg-server \
-    xsel \
-    yarn \
+sudo pacman -S arc-gtk-theme dash dmenu fakeroot firefox gcc herbstluftwm light make neovim pulsemixer python-neovim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 
 # PROJECTS
 cd ~/projects || exit
