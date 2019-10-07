@@ -9,6 +9,7 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo pacman -S \
     arc-gtk-theme \
     dash \
+    dmenu \
     fakeroot \
     firefox \
     gcc \
@@ -29,16 +30,14 @@ sudo pacman -S \
 
 # PROJECTS
 cd ~/projects || exit
-git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/st
-cd dmenu && sudo make install clean
 cd ../st && sudo make install clean
 cd ../dotfiles && sh setup.sh
 
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox j4-dmenu-desktop
+yay -S dropbox
 
 # CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
