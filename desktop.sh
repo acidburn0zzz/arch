@@ -17,7 +17,7 @@ cd ../dotfiles && sh setup.sh
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox
+yay -S dropbox flat-remix
 
 # CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
