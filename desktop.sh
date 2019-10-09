@@ -6,11 +6,13 @@ sudo systemctl enable --now ead.service iwd.service systemd-networkd.service sys
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S arc-gtk-theme ctags dash dmenu fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
+sudo pacman -S arc-gtk-theme ctags dash fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 
 # PROJECTS
 cd ~/projects || exit
+git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/st
+cd dmenu && sudo make install clean
 cd ../st && sudo make install clean
 cd ../dotfiles && sh setup.sh
 
