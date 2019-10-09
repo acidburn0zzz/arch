@@ -24,7 +24,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo localectl set-x11-keymap us pc105 altgr-intl caps:swapescape
-sudo systemctl enable fstrim.timer systemd-timesyncd.service
+sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
 sudo pacman -Rns diffutils dhcpcd efibootmgr gettext go inetutils iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
