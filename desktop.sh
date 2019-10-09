@@ -6,7 +6,7 @@ sudo systemctl enable --now ead.service iwd.service systemd-networkd.service sys
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S arc-gtk-theme ctags dash dmenu fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
+sudo pacman -S arc-gtk-theme ctags dash dmenu fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 
 # PROJECTS
 cd ~/projects || exit
@@ -17,7 +17,7 @@ cd ../dotfiles && sh setup.sh
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox flat-remix
+yay -S dropbox flat-remix neovim-remote
 
 # CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
