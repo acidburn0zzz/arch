@@ -21,7 +21,7 @@ cd ../dotfiles && sh setup.sh
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox flat-remix neovim-remote
+yay -S dropbox flat-remix neovim-remote nerd-fonts-hack
 
 # CONFIGURE
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
