@@ -11,8 +11,10 @@ sudo pacman -S arc-gtk-theme ctags dash fakeroot firefox fzf gcc herbstluftwm li
 # PROJECTS
 cd ~/projects || exit
 git clone https://github.com/astier/dmenu
+git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
 cd dmenu && sudo make install clean
+cd ../slock && sudo make install clean
 cd ../st && sudo make install clean
 cd ../dotfiles && sh setup.sh
 
