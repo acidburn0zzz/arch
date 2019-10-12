@@ -11,7 +11,7 @@ sudo pacman -S arc-gtk-theme ctags dash fakeroot firefox fzf gcc herbstluftwm li
 # AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
-yay -S dropbox flat-remix
+yay -S dropbox neovim-remote
 
 # PROJECTS
 cd ~/projects || exit
