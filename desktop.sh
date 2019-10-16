@@ -7,8 +7,6 @@ sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
 sudo pacman -S arc-gtk-theme ctags dash fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
-
-# AUR
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox neovim-remote
