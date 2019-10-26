@@ -6,7 +6,7 @@ sudo systemctl enable --now ead.service iwd.service systemd-networkd.service sys
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make neovim noto-fonts-cjk pulsemixer python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
+sudo pacman -S arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make man-db noto-fonts-cjk pulsemixer python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 cd && git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox
@@ -28,8 +28,8 @@ sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns diffutils dhcpcd efibootmgr gettext go inetutils iproute2 iputils jfsutils licenses logrotate lvm2 man-pages mdadm nano netctl pciutils psmisc reiserfsprogs s-nail usbutils vi which xfsprogs
+sudo pacman -Rns efibootmgr fakeroot gcc go make
 sudo pacman -Sc
-cd && rm -fr yay .bash_logout .cache/go-build
+cd && rm -fr .bash_logout .cache/go-build yay
 
 sudo reboot

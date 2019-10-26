@@ -3,8 +3,9 @@
 timedatectl set-ntp 1
 
 # PARTITION
-gdisk /dev/nvme0n1
-# boot +2200 EF00, root
+gdisk /dev/nvme0n1 # boot +2200 EF00, root
+mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
+mkfs.ext4 -L ROOT /dev/mapper/root
 
 # ENCRYPT
 mkdir usb
@@ -12,20 +13,15 @@ mount -L USB usb
 cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
 cryptsetup open /dev/nvme0n1p2 root -d usb/key
 
-# FILESYSTEM
-mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
-mkfs.ext4 -L ROOT /dev/mapper/root
-
 # MOUNT
 mount -L ROOT /mnt
 mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd sudo
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim sudo
 genfstab -L /mnt >> /mnt/etc/fstab
-vi /mnt/etc/fstab
-# Replace relatime with noatime,lazytime,commit=180
+vi /mnt/etc/fstab # Replace relatime with noatime,lazytime,commit=180
 
 # CONFIGURE
 arch-chroot /mnt
