@@ -43,11 +43,11 @@ passwd
 passwd -l root
 
 # BOOT
-mkdir /home/aleks/projects
-cd /home/aleks/projects || exit
+mkdir /home/usename/projects
+cd /home/usename/projects || exit
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
-chown -R aleks /home/aleks/projects
+chown -R usename /home/usename/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 cd scripts && sh setup.sh
 mkinitcpio -p linux
