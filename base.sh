@@ -1,17 +1,14 @@
 #!/usr/bin/env sh
 
+# establish internet-connection first
 timedatectl set-ntp 1
 
-# PARTITION
+# PARTITIONS
 gdisk /dev/nvme0n1 # boot +2200 EF00, root
-mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
-mkfs.ext4 -L ROOT /dev/mapper/root
-
-# ENCRYPT
-mkdir usb
-mount -L USB usb
 cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
 cryptsetup open /dev/nvme0n1p2 root -d usb/key
+mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
+mkfs.ext4 -L ROOT /dev/mapper/root
 
 # MOUNT
 mount -L ROOT /mnt
@@ -21,7 +18,7 @@ mount -L BOOT /mnt/boot
 # INSTALL
 pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim sudo
 genfstab -L /mnt >> /mnt/etc/fstab
-vi /mnt/etc/fstab # Replace relatime with noatime,lazytime,commit=60
+vi /mnt/etc/fstab # replace relatime with noatime,lazytime,commit=60
 
 # CONFIGURE
 arch-chroot /mnt
@@ -34,7 +31,7 @@ echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
 locale-gen
 
 # USER
-EDITOR=vi visudo
+EDITOR=nvim visudo
 # %wheel ALL=(ALL) ALL
 # Defaults passwd_timeout=0
 useradd -mG wheel username

@@ -29,7 +29,7 @@ sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
-sudo pacman -Rns efibootmgr fakeroot gcc go make
+sudo pacman -Rns efibootmgr go
 sudo pacman -Sc
 cd && rm -fr .bash_logout .cache/go-build yay
 
