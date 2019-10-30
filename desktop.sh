@@ -27,10 +27,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
-
-# CLEAN
-sudo pacman -Rns efibootmgr go
-sudo pacman -Sc
+sudo usermod -aG video "$USER" # fixes broken light-package in arch-repo
 cd && rm -fr .bash_logout .cache/go-build yay
 
 sudo reboot
