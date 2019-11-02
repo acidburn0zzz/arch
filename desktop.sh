@@ -2,7 +2,7 @@
 
 # INTERNET
 sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
-sudo systemctl enable --now ead.service iwd.service systemd-networkd.service systemd-resolved.service
+sudo systemctl enable --now iwd.service systemd-networkd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
@@ -27,7 +27,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
-sudo usermod -aG video "$USER" # fixes broken light-package in arch-repo
+sudo usermod -aG video "$USER" # fix broken light-package
 cd && rm -fr .bash_logout .cache/go-build yay
 
 sudo reboot
