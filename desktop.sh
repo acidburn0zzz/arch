@@ -18,11 +18,11 @@ git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
 cd dmenu && sudo make install clean
-cd ../dotfiles && sh setup.sh
 cd ../slock && sudo make install clean
 cd ../st && sudo make install clean
 
-# CONFIGURE
+# CONFIG
+cd ../dotfiles && sh setup.sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
