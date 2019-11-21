@@ -13,7 +13,6 @@ yay -S dropbox
 
 # PROJECTS
 cd ~/projects || exit
-git clone https://github.com/astier/arch
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
