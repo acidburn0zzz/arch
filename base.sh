@@ -23,6 +23,7 @@ vi /mnt/etc/fstab # replace relatime with noatime,lazytime,commit=60
 # CONFIGURE
 arch-chroot /mnt
 chattr +i /var/log/lastlog
+setterm -cursor on > /etc/issue
 echo hostname > /etc/hostname
 ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock -w
