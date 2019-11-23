@@ -3,7 +3,7 @@
 # establish internet-connection first
 timedatectl set-ntp 1
 
-# PARTITIONS
+# PARTITION
 gdisk /dev/nvme0n1 # boot +2200 EF00, root
 cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
 cryptsetup open /dev/nvme0n1p2 root -d usb/key
