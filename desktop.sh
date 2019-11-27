@@ -6,19 +6,21 @@ sudo systemctl enable --now iwd.service systemd-networkd.service systemd-resolve
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make man-db noto-fonts-cjk python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
+sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc light make man-db noto-fonts-cjk python-pynvim sx tmux ttf-dejavu xorg-server xsel yarn
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox
 
-# PROJECTS
+# SUCKLESS
 cd ~/projects || exit
 git clone https://git.suckless.org/sites
 git clone https://github.com/astier/arch
 git clone https://github.com/astier/dmenu
+git clone https://github.com/astier/dwm
 git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
 cd dmenu && sudo make install clean
+cd ../dwm && sudo make install clean
 cd ../slock && sudo make install clean
 cd ../st && sudo make install clean
 
