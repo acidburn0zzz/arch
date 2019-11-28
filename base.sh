@@ -50,6 +50,7 @@ cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 cd scripts && sh setup.sh
 mkinitcpio -p linux
 efistub
+pacman -Rns efibootmgr
 
 # REBOOT
 exit
