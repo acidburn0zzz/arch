@@ -49,7 +49,7 @@ chown -R usename /home/usename/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 cd scripts && sh setup.sh
 mkinitcpio -p linux
-efistub
+efs
 
 # REBOOT
 exit
