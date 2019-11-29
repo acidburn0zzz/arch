@@ -47,9 +47,8 @@ git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 chown -R usename /home/usename/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
-cd scripts && sh setup.sh
 mkinitcpio -p linux
-efs
+sh scripts/efs.sh
 
 # REBOOT
 exit
