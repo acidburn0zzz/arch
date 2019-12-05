@@ -3,7 +3,7 @@
 # INTERNET
 sudo cp ~/projects/dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
-sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PACKAGES
 sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc light make man-db noto-fonts-cjk python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xorg-xsetroot xsel yarn
