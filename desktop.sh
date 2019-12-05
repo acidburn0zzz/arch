@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # INTERNET
-sudo cp -fr ~/projects/dotfiles/dotfiles/systemd/network /etc/systemd
-sudo systemctl enable --now iwd.service systemd-networkd.service systemd-resolved.service
+sudo cp ~/projects/dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
+sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # PACKAGES
