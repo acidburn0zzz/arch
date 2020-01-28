@@ -6,7 +6,7 @@ sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PACKAGES
-sudo pacman -S alacritty alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make man-db noto-fonts-cjk python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel
+sudo pacman -S alacritty alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm light make man-db noto-fonts-cjk python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xsel yarn
 git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox xbanish
